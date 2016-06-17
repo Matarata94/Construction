@@ -1,6 +1,5 @@
 package ir.matarata.construction;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -20,15 +19,6 @@ import android.text.style.AlignmentSpan;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.widget.Switch;
-import android.widget.Toast;
-
-import com.software.shell.fab.ActionButton;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 

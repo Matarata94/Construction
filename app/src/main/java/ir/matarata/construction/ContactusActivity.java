@@ -20,7 +20,7 @@ public class ContactusActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         Typeface myfont = Typeface.createFromAsset(getAssets(), "BFARNAZ.TTF");
         android.support.v7.widget.AppCompatTextView tv_ins = (android.support.v7.widget.AppCompatTextView) findViewById(R.id.contactus_toolbartitle);
-        tv_ins.setText("تنظیمات");
+        tv_ins.setText("ارتباط با ما");
         tv_ins.setGravity(Gravity.CENTER);
         tv_ins.setTextSize(25);
         tv_ins.setTypeface(myfont);

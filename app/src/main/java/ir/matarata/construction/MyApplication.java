@@ -1,5 +1,5 @@
 package ir.matarata.construction;
-
+//Useless for now
 import android.app.Application;
 import android.content.Context;
 
