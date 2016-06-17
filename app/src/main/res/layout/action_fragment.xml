@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#d5ddda"
+    tools:context="ir.matarata.construction.MenuActivity">
+
+    <RelativeLayout
+        android:id="@+id/am_rl_first"
+        android:layout_width="330dp"
+        android:layout_height="155dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/analyshadow"
+        android:scaleType="fitXY" >
+
+        <View
+            android:id="@+id/am_firstrl_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#709e9e9e" />
+
+        <TextView
+            android:id="@+id/am_firstrl_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_alignRight="@+id/am_firstrl_view"
+            android:layout_alignTop="@+id/am_firstrl_view"
+            android:layout_marginRight="15dp"
+            android:textSize="23dp"
+            android:textColor="#ffffff"
+            android:text=" آنالیز" />
+
+        <TextView
+            android:id="@+id/am_firstrl_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/am_firstrl_tv"
+            android:layout_alignRight="@+id/am_firstrl_tv"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:textColor="#ffffff"
+            android:visibility="gone"
+            android:textSize="18dp"
+            android:text=" یافتن ظرفیت باربری خمشی و برشی تیربتنی" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/am_rl_second"
+        android:layout_width="330dp"
+        android:layout_height="155dp"
+        android:layout_below="@+id/am_rl_first"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/controlshadow" >
+
+        <View
+            android:id="@+id/am_secondrl_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#709e9e9e"
+            />
+
+        <TextView
+            android:id="@+id/am_secondrl_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_alignRight="@+id/am_secondrl_view"
+            android:layout_alignTop="@+id/am_secondrl_view"
+            android:layout_marginRight="15dp"
+            android:textSize="23dp"
+            android:textColor="#ffffff"
+            android:text=" کنترل" />
+
+        <TextView
+            android:id="@+id/am_secondrl_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/am_secondrl_tv"
+            android:layout_alignRight="@+id/am_secondrl_tv"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:textColor="#ffffff"
+            android:visibility="gone"
+            android:textSize="18dp"
+            android:text=" کنترل مقطع برای بارهای وارده" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/am_rl_third"
+        android:layout_width="330dp"
+        android:layout_height="155dp"
+        android:layout_below="@+id/am_rl_second"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/designshadow" >
+
+        <View
+            android:id="@+id/am_thirdrl_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#709e9e9e"
+            />
+
+        <TextView
+            android:id="@+id/am_thirdrl_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_alignRight="@+id/am_thirdrl_view"
+            android:layout_alignTop="@+id/am_thirdrl_view"
+            android:layout_marginRight="15dp"
+            android:textSize="23dp"
+            android:textColor="#ffffff"
+            android:text=" طراحی" />
+
+        <TextView
+            android:id="@+id/am_thirdrl_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/am_thirdrl_tv"
+            android:layout_alignRight="@+id/am_thirdrl_tv"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:textColor="#ffffff"
+            android:visibility="gone"
+            android:textSize="18dp"
+            android:text=" طراحی خمشی و برشی تیربتنی تحت اثر بارهای  وارده" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

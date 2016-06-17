@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="200dp">
+
+    <RelativeLayout
+        android:layout_width="315dp"
+        android:layout_height="195dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/aboutusdialogshadow">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="گروه مهندسی همراه سازه"
+        android:id="@+id/aboutus_tv1"
+        android:textColor="#ffeb3b"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="تهیه کننده: مهندس حسین غلامزاده \n\n سال تاسیس 1394"
+        android:id="@+id/aboutus_tv2"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/aboutus_tv1"
+        android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/secdet_wholerl"
+    android:background="#29b6f6">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/secdet_toprl">
+
+        <ImageView
+            android:id="@+id/secdet_imgtoprl"
+            android:layout_width="150dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/analystemppic"
+            android:contentDescription="img"/>
+
+        <TextView
+            android:id="@+id/secdet_toprltv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/secdet_imgtoprl"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:text="h = " />
+
+        <TextView
+            android:id="@+id/secdet_toprltv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv1"
+            android:layout_below="@+id/secdet_toprltv1"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:text="b = " />
+
+        <TextView
+            android:id="@+id/secdet_toprltv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv2"
+            android:layout_below="@+id/secdet_toprltv2"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:text="c = " />
+
+        <TextView
+            android:id="@+id/secdet_toprltv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv3"
+            android:layout_below="@+id/secdet_toprltv3"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:text="d = " />
+
+        <TextView
+            android:id="@+id/secdet_toprltv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv4"
+            android:layout_below="@+id/secdet_toprltv4"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:text="F'c = " />
+
+        <TextView
+            android:id="@+id/secdet_toprltv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv5"
+            android:layout_below="@+id/secdet_toprltv5"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:text="Fy = " />
+
+        <TextView
+            android:id="@+id/secdet_toprltv1data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/secdet_toprltv1"
+            android:textColor="#e91e63"
+            android:textSize="14dp"
+            android:text="60 cm" />
+
+        <TextView
+            android:id="@+id/secdet_toprltv2data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv1data"
+            android:layout_below="@+id/secdet_toprltv1"
+            android:layout_marginTop="10dp"
+            android:textColor="#e91e63"
+            android:textSize="14dp"
+            android:text="40 cm" />
+
+        <TextView
+            android:id="@+id/secdet_toprltv3data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv2data"
+            android:layout_below="@+id/secdet_toprltv2"
+            android:layout_marginTop="10dp"
+            android:textColor="#e91e63"
+            android:textSize="14dp"
+            android:text="5 cm" />
+
+        <TextView
+            android:id="@+id/secdet_toprltv4data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv3data"
+            android:layout_below="@+id/secdet_toprltv3"
+            android:layout_marginTop="10dp"
+            android:textColor="#e91e63"
+            android:textSize="14dp"
+            android:text="55 cm" />
+
+        <TextView
+            android:id="@+id/secdet_toprltv5data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv4data"
+            android:layout_below="@+id/secdet_toprltv4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#e91e63"
+            android:textSize="14dp"
+            android:text="270 kgf/cm" />
+
+        <TextView
+            android:id="@+id/secdet_toprltv6data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/secdet_toprltv5data"
+            android:layout_below="@+id/secdet_toprltv5"
+            android:layout_marginTop="10dp"
+            android:textColor="#e91e63"
+            android:textSize="14dp"
+            android:text="200 kgf/cm" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/secdet_arrowbtn"
+        android:background="@drawable/toparrow"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:layout_marginRight="7dp"/>
+
+    <com.dd.morphingbutton.MorphingButton
+        android:id="@+id/secdet_ayinnameiran"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:background="@drawable/ayinameiranbtn"
+        android:text="  آیین نامه بتن ایران  "
+        android:textColor="#ffffff"/>
+
+    <com.dd.morphingbutton.MorphingButton
+        android:id="@+id/secdet_ayinnameusa"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/secdet_ayinnameiran"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:background="@drawable/ayinameiranbtn"
+        android:text="  آیین نامه بتن آمریکا  "
+        android:textColor="#ffffff"/>
+
+    <com.dd.morphingbutton.MorphingButton
+        android:id="@+id/secdet_maghtamostatily"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="35dp"
+        android:visibility="gone"
+        android:background="@drawable/ayinameiranbtn"
+        android:text="مقطع مستطیلی"
+        android:textColor="#ffffff"/>
+
+    <com.dd.morphingbutton.MorphingButton
+        android:id="@+id/secdet_maghtatirchebolok"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="35dp"
+        android:visibility="gone"
+        android:background="@drawable/ayinameiranbtn"
+        android:text="تیرچه بلوک"
+        android:textColor="#ffffff"/>
+
+    <com.dd.morphingbutton.MorphingButton
+        android:id="@+id/secdet_maghtalshekl"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="35dp"
+        android:layout_below="@+id/secdet_maghtamostatily"
+        android:visibility="gone"
+        android:background="@drawable/ayinameiranbtn"
+        android:text="مقطع L شکل"
+        android:textColor="#ffffff"/>
+
+    <com.dd.morphingbutton.MorphingButton
+        android:id="@+id/secdet_maghtatshekl"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="35dp"
+        android:layout_below="@+id/secdet_maghtatirchebolok"
+        android:visibility="gone"
+        android:background="@drawable/ayinameiranbtn"
+        android:text="مقطع T شکل"
+        android:textColor="#ffffff"/>
+
+        <ScrollView
+            android:id="@+id/secdet_botscroll"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:visibility="visible"
+            android:layout_below="@+id/secdet_arrowbtn"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:id="@+id/secdet_botrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/secdet_tvh"
+                android:text="h :"
+                android:textSize="17dp"
+                android:layout_toLeftOf="@+id/secdet_metb"
+                android:layout_marginRight="-40dp"
+                android:textColor="#bdbdbd"
+                android:layout_marginTop="30dp"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_meth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="3dp"
+                android:layout_centerHorizontal="true"
+                android:hint="ارتفاع کل مقطع"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                app:met_underlineColor="#bdbdbd"
+                android:cursorVisible="true"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLines="1"
+                android:clickable="true"
+                app:met_floatingLabel="normal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/secdet_tvb"
+                android:text="b :"
+                android:textSize="17dp"
+                android:layout_toLeftOf="@+id/secdet_metb"
+                android:layout_below="@+id/secdet_meth"
+                android:layout_marginRight="-40dp"
+                android:textColor="#bdbdbd"
+                android:layout_marginTop="30dp"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_metb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_meth"
+                android:layout_centerHorizontal="true"
+                android:hint="عرض مقطع"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                app:met_underlineColor="#bdbdbd"
+                android:cursorVisible="true"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center"
+                android:maxLines="1"
+                android:inputType="number"
+                android:clickable="true"
+                app:met_floatingLabel="normal"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_spdownarm"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/secdet_metb"
+                android:layout_centerHorizontal="true"
+                android:hint="آرماتور پایین"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_floatingLabel="normal"
+                android:cursorVisible="false"
+                android:maxLines="1"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                android:clickable="true"
+                android:inputType="number"
+                app:met_underlineColor="#bdbdbd"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_spdownarmnumber"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_metb"
+                android:layout_centerHorizontal="true"
+                android:hint="تعداد"
+                app:met_floatingLabelTextSize="14dp"
+                android:cursorVisible="true"
+                app:met_floatingLabel="normal"
+                android:maxLines="1"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                android:inputType="number"
+                android:clickable="true"
+                app:met_underlineColor="#bdbdbd"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_spdownarmcover"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/secdet_metb"
+                android:layout_centerHorizontal="true"
+                android:hint="کاور"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_floatingLabel="normal"
+                app:met_baseColor="#e91e63"
+                android:maxLines="1"
+                android:cursorVisible="true"
+                app:met_textColorHint="#bdbdbd"
+                android:clickable="true"
+                app:met_underlineColor="#bdbdbd"
+                android:inputType="number"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_spuparm"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_spdownarm"
+                android:layout_centerHorizontal="true"
+                android:hint="آرماتور بالا"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_floatingLabel="normal"
+                app:met_baseColor="#e91e63"
+                android:maxLines="1"
+                app:met_textColorHint="#bdbdbd"
+                android:cursorVisible="false"
+                app:met_underlineColor="#bdbdbd"
+                android:inputType="number"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_spuparmnumber"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_spdownarm"
+                android:layout_centerHorizontal="true"
+                android:hint="تعداد"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_floatingLabel="normal"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                android:inputType="number"
+                android:cursorVisible="true"
+                android:maxLines="1"
+                app:met_underlineColor="#bdbdbd"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_spuparmcover"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_spdownarm"
+                android:layout_centerHorizontal="true"
+                android:hint="کاور"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_floatingLabel="normal"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                android:cursorVisible="true"
+                android:maxLines="1"
+                app:met_underlineColor="#bdbdbd"
+                android:inputType="number"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_spties"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_spuparm"
+                android:layout_centerHorizontal="true"
+                android:hint="خاموت"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_floatingLabel="normal"
+                app:met_baseColor="#e91e63"
+                android:maxLines="1"
+                android:inputType="number"
+                app:met_textColorHint="#bdbdbd"
+                android:cursorVisible="false"
+                app:met_underlineColor="#bdbdbd"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_sptiesnumber"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_spuparm"
+                android:layout_centerHorizontal="true"
+                android:hint="تعداد"
+                app:met_floatingLabelTextSize="14dp"
+                android:maxLines="1"
+                app:met_floatingLabel="normal"
+                android:inputType="number"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                android:cursorVisible="true"
+                app:met_underlineColor="#bdbdbd"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_sptiescover"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_spuparm"
+                android:layout_centerHorizontal="true"
+                android:hint="کاور"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_floatingLabel="normal"
+                android:maxLines="1"
+                android:inputType="number"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                android:cursorVisible="true"
+                app:met_underlineColor="#bdbdbd"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/secdet_tvfc"
+                android:text="F'c :"
+                android:textSize="17dp"
+                android:layout_toLeftOf="@+id/secdet_metfc"
+                android:layout_below="@+id/secdet_spties"
+                android:layout_marginRight="-40dp"
+                android:textColor="#bdbdbd"
+                android:layout_marginTop="30dp"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_metfc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="3dp"
+                android:inputType="number"
+                android:layout_below="@+id/secdet_spties"
+                android:layout_centerHorizontal="true"
+                android:hint="تنش نهایی نمونه استوانه ای بتن"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_baseColor="#e91e63"
+                android:maxLines="1"
+                app:met_textColorHint="#bdbdbd"
+                android:cursorVisible="true"
+                app:met_underlineColor="#bdbdbd"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center"
+                app:met_floatingLabel="normal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/secdet_tvfy"
+                android:text="Fy :"
+                android:textSize="17sp"
+                android:layout_toLeftOf="@+id/secdet_metfy"
+                android:layout_below="@+id/secdet_tvfc"
+                android:layout_marginRight="-40dp"
+                android:textColor="#bdbdbd"
+                android:layout_marginTop="30dp"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/secdet_metfy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/secdet_metfc"
+                android:layout_centerHorizontal="true"
+                android:hint="تنش جاری شدن فولاد"
+                app:met_floatingLabelTextSize="14dp"
+                android:cursorVisible="true"
+                app:met_baseColor="#e91e63"
+                app:met_textColorHint="#bdbdbd"
+                android:maxLines="1"
+                app:met_underlineColor="#bdbdbd"
+                app:met_floatingLabelTextColor="#000000"
+                android:gravity="center"
+                android:inputType="number"
+                app:met_floatingLabel="normal"/>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    <Button
+        android:id="@+id/secdet_ayinnamebtn"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:rotation="90"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="-52dp"
+        android:background="@drawable/ayinnamebtn"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:text="آیین نامه بتن ایران"/>
+
+    <Button
+        android:id="@+id/secdet_maghtabtn"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:rotation="-90"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="-46dp"
+        android:background="@drawable/ayinnamebtn"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:text="مقطع مستطیلی"/>
+
+    <LinearLayout
+        android:id="@+id/secdet_fabselectedrl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        android:alpha="0.6"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <com.software.shell.fab.ActionButton
+        android:id="@+id/secdet_subfab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="90dp"
+        fab:type="MINI"
+        fab:button_color="#26c6da"
+        fab:button_colorPressed="#26c6da"
+        fab:image="@drawable/nm"
+        fab:image_size="50dp"
+        fab:shadow_color="#b2ebf2"
+        fab:shadow_radius="5.0dp"
+        fab:shadow_xOffset="0.0dp"
+        fab:shadow_yOffset="3.0dp"
+        fab:button_colorRipple="#80deea"
+        fab:rippleEffect_enabled="true"/>
+
+    <com.software.shell.fab.ActionButton
+        android:id="@+id/secdet_subfab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="70dp"
+        fab:type="MINI"
+        fab:button_color="#FF4081"
+        fab:button_colorPressed="#FF4081"
+        fab:image="@drawable/n_mm"
+        fab:image_size="50dp"
+        fab:shadow_color="#f8bbd0"
+        fab:shadow_radius="5.0dp"
+        fab:shadow_xOffset="0.0dp"
+        fab:shadow_yOffset="3.0dp"
+        fab:button_colorRipple="#fb78a5"
+        fab:rippleEffect_enabled="true"/>
+
+    <com.software.shell.fab.ActionButton
+        android:id="@+id/secdet_subfab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="90dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="20dp"
+        fab:type="MINI"
+        fab:button_color="#26c6da"
+        fab:button_colorPressed="#26c6da"
+        fab:image="@drawable/knm"
+        fab:image_size="50dp"
+        fab:shadow_color="#b2ebf2"
+        fab:shadow_radius="5.0dp"
+        fab:shadow_xOffset="0.0dp"
+        fab:shadow_yOffset="3.0dp"
+        fab:button_colorRipple="#80deea"
+        fab:rippleEffect_enabled="true"/>
+
+    <com.software.shell.fab.ActionButton
+        android:id="@+id/secdet_subfab4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="145dp"
+        fab:type="MINI"
+        fab:button_color="#26a69a"
+        fab:button_colorPressed="#26a69a"
+        fab:image="@drawable/kgf_mm"
+        fab:image_size="50dp"
+        fab:shadow_color="#b2dfdb"
+        fab:shadow_radius="5.0dp"
+        fab:shadow_xOffset="0.0dp"
+        fab:shadow_yOffset="3.0dp"
+        fab:button_colorRipple="#80cbc4"
+        fab:rippleEffect_enabled="true"/>
+
+    <com.software.shell.fab.ActionButton
+        android:id="@+id/secdet_subfab5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="125dp"
+        fab:type="MINI"
+        app:image="@drawable/kgf_mm"
+        fab:button_color="#26a69a"
+        fab:button_colorPressed="#26a69a"
+        fab:image_size="50dp"
+        fab:shadow_color="#b2dfdb"
+        fab:shadow_radius="5.0dp"
+        fab:shadow_xOffset="0.0dp"
+        fab:shadow_yOffset="3.0dp"
+        fab:button_colorRipple="#80cbc4"
+        fab:rippleEffect_enabled="true" />
+
+    <com.software.shell.fab.ActionButton
+        android:id="@+id/secdet_subfab6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="125dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="80dp"
+        fab:type="MINI"
+        fab:button_color="#26a69a"
+        fab:button_colorPressed="#26a69a"
+        fab:image="@drawable/kgf_mm"
+        fab:image_size="50dp"
+        fab:shadow_color="#b2dfdb"
+        fab:shadow_radius="5.0dp"
+        fab:shadow_xOffset="0.0dp"
+        fab:shadow_yOffset="3.0dp"
+        fab:button_colorRipple="#80cbc4"
+        fab:rippleEffect_enabled="true"/>
+
+    <com.software.shell.fab.ActionButton
+        android:id="@+id/secdet_subfab7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="145dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="20dp"
+        fab:type="MINI"
+        fab:button_color="#26a69a"
+        fab:button_colorPressed="#26a69a"
+        fab:image="@drawable/kgf_mm"
+        fab:image_size="50dp"
+        fab:shadow_color="#b2dfdb"
+        fab:shadow_radius="5.0dp"
+        fab:shadow_xOffset="0.0dp"
+        fab:shadow_yOffset="3.0dp"
+        fab:button_colorRipple="#80cbc4"
+        fab:rippleEffect_enabled="true"/>
+
+    <com.software.shell.fab.ActionButton
+        android:id="@+id/secdet_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        fab:type="DEFAULT"
+        fab:button_color="#FF4081"
+        fab:button_colorPressed="#FF4081"
+        fab:image="@drawable/n_mm"
+        fab:image_size="60dp"
+        fab:shadow_color="#f8bbd0"
+        fab:shadow_radius="5.0dp"
+        fab:shadow_xOffset="0.0dp"
+        fab:shadow_yOffset="3.0dp"
+        fab:button_colorRipple="#fb78a5"
+        android:visibility="gone"
+        fab:rippleEffect_enabled="true"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/testfab"
+        android:layout_margin="16dp"
+        app:fabSize="normal"
+        app:elevation="5dp"
+        app:backgroundTint="#000000"
+        android:src="@drawable/closeicon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:pressedTranslationZ="8dp"
+        app:rippleColor="@color/emerald"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/Keyboard_container">
+    </RelativeLayout>
+
+</RelativeLayout>
+

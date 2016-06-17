@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:alpha="0.65"
+    android:background="@drawable/keyboard_layout">
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:id="@+id/keyboard_btn1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:id="@+id/keyboard_btn2"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/keyboard_btn1"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:id="@+id/keyboard_btn3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:id="@+id/keyboard_btn4"
+        android:layout_below="@+id/keyboard_btn1"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:id="@+id/keyboard_btn5"
+        android:layout_below="@+id/keyboard_btn2"
+        android:layout_toRightOf="@+id/keyboard_btn4"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="6"
+        android:id="@+id/keyboard_btn6"
+        android:layout_below="@+id/keyboard_btn3"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="7"
+        android:id="@+id/keyboard_btn7"
+        android:layout_below="@+id/keyboard_btn4"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="8"
+        android:id="@+id/keyboard_btn8"
+        android:layout_below="@+id/keyboard_btn5"
+        android:layout_toRightOf="@+id/keyboard_btn7"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:id="@+id/keyboard_btn9"
+        android:layout_below="@+id/keyboard_btn6"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="."
+        android:id="@+id/keyboard_btndot"
+        android:layout_below="@+id/keyboard_btn7"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/keyboard_btn0"
+        android:layout_below="@+id/keyboard_btn8"
+        android:layout_toRightOf="@+id/keyboard_btndot"
+        android:background="@drawable/keyboard_buttonpress"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:id="@+id/keyboard_btnremove"
+        android:layout_below="@+id/keyboard_btn8"
+        android:layout_toRightOf="@+id/keyboard_btn0"
+        android:background="@drawable/keyboard_buttonpress_backspace"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:id="@+id/keyboard_btnbackward"
+        android:layout_below="@+id/keyboard_btndot"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/keyboard_buttonpress_backward"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:id="@+id/keyboard_btnforeward"
+        android:layout_below="@+id/keyboard_btn0"
+        android:layout_toRightOf="@+id/keyboard_btnbackward"
+        android:background="@drawable/keyboard_buttonpress_foreward"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:id="@+id/keyboard_btnkeyboard"
+        android:layout_below="@+id/keyboard_btnremove"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/keyboard_buttonpress_keyboard"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+
+</RelativeLayout>

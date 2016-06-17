@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Archive">
+        <menu>
+            <item android:title="New"
+                android:id="@+id/nav_item_new"
+                android:icon="@drawable/newfiledrawer"/>
+
+            <item android:title="Save"
+                android:id="@+id/nav_item_save"
+                android:icon="@drawable/savedrawer"/>
+
+            <item android:title="Open"
+                android:id="@+id/nav_item_open"
+                android:icon="@drawable/opendrawer"/>
+        </menu>
+    </item>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:title="VIP"
+                android:id="@+id/nav_item_vip"
+                android:icon="@drawable/vipdrawer"/>
+            <item
+                android:title="Setting"
+                android:id="@+id/nav_item_setting"
+                android:icon="@drawable/settingdrawer"/>
+        </menu>
+    </item>
+            <item
+                android:title="Contact us"
+                android:id="@+id/nav_item_contactus"
+                android:icon="@drawable/contactusdrawer"/>
+</menu>

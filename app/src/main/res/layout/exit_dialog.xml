@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="130dp"
+    android:id="@+id/exitdialog_wholerl"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ExitDialog">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="آیا مایل به خروج از برنامه هستید؟"
+        android:id="@+id/exitdialog_questiontv"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:textColor="#000000"
+        android:textSize="12dp"/>
+
+    <com.andexert.library.RippleView
+        android:id="@+id/exitdialog_firstripple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exitdialog_questiontv"
+        android:layout_alignRight="@+id/exitdialog_questiontv"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        app:rv_color="#4db6ac"
+        app:rv_rippleDuration="150"
+        rv_centered="true">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="خروج و ذخیره"
+        android:id="@+id/exitdialog_exitsavebtn"
+        android:background="@android:color/transparent"
+        android:textColor="#009688"
+        style="?android:attr/borderlessButtonStyle"
+        android:textSize="10dp"/>
+    </com.andexert.library.RippleView>
+
+    <com.andexert.library.RippleView
+        android:id="@+id/exitdialog_secondripple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exitdialog_questiontv"
+        android:layout_toLeftOf="@+id/exitdialog_firstripple"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        app:rv_color="#4db6ac"
+        app:rv_rippleDuration="150"
+        rv_centered="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="خروج بدون ذخیره"
+            android:id="@+id/exitdialog_exitnosavebtn"
+            android:background="@android:color/transparent"
+            android:textColor="#009688"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="10dp"/>
+    </com.andexert.library.RippleView>
+
+    <com.andexert.library.RippleView
+        android:id="@+id/exitdialog_thirdripple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exitdialog_questiontv"
+        android:layout_toLeftOf="@+id/exitdialog_secondripple"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        app:rv_color="#4db6ac"
+        app:rv_rippleDuration="150"
+        rv_centered="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="انصراف"
+            android:id="@+id/exitdialog_cancelbtn"
+            android:background="@android:color/transparent"
+            android:textColor="#009688"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="10dp"/>
+    </com.andexert.library.RippleView>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/exitdialog_filenameet"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/exitdialog_firstripple"
+        android:layout_below="@+id/exitdialog_firstripple"
+        android:layout_marginTop="5dp"
+        android:hint="نام فایل"
+        app:met_floatingLabelTextSize="14dp"
+        app:met_baseColor="#e91e63"
+        app:met_textColorHint="#bdbdbd"
+        app:met_underlineColor="#bdbdbd"
+        android:cursorVisible="true"
+        app:met_floatingLabelTextColor="#009688"
+        android:gravity="center"
+        android:inputType="text"
+        android:maxLines="1"
+        android:clickable="true"
+        app:met_floatingLabel="normal"
+        android:visibility="gone"/>
+
+    <com.andexert.library.RippleView
+        android:id="@+id/exitdialog_fourthripple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exitdialog_thirdripple"
+        android:layout_toLeftOf="@+id/exitdialog_filenameet"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        app:rv_color="#4db6ac"
+        app:rv_rippleDuration="150"
+        android:visibility="gone"
+        rv_centered="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ایجاد نام خودکار"
+            android:id="@+id/exitdialog_autonamebtn"
+            android:background="@android:color/transparent"
+            android:textColor="#009688"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="10dp"/>
+    </com.andexert.library.RippleView>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/exitdialog_doneprogress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@+id/exitdialog_fourthripple"
+        android:layout_alignRight="@+id/exitdialog_fourthripple"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        app:indicator="BallPulse"
+        app:indicator_color="#bdbdbd" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/exitdialog_fifthripple"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/exitdialog_fourthripple"
+        android:layout_alignLeft="@+id/exitdialog_fourthripple"
+        android:background="@android:color/transparent"
+        app:rv_color="#4db6ac"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        app:rv_rippleDuration="150"
+        rv_centered="true">
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/exitdialog_donebtn"
+            android:background="@drawable/doneicon"
+            android:textColor="#009688"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="10dp"/>
+    </com.andexert.library.RippleView>
+
+</RelativeLayout>
