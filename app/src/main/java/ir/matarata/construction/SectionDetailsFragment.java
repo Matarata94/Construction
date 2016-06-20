@@ -1,6 +1,8 @@
 package ir.matarata.construction;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -8,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -33,7 +36,7 @@ import com.software.shell.fab.ActionButton;
 public class SectionDetailsFragment extends Fragment implements View.OnClickListener,View.OnTouchListener,View.OnFocusChangeListener{
 
     private View view;
-    public static Button arrowbtn,ayinnamebtn,maghtabtn;
+    public Button arrowbtn,ayinnamebtn,maghtabtn;
     private RelativeLayout toprl,botrl,wholerl;
     public static LinearLayout fabselectedll;
     private ScrollView botscroll;
@@ -45,6 +48,7 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
     private int arrow=0;
     public static KeyboardFragment keyboard_fragment;
     public static ActionButton fab,subfab1,subfab2,subfab3,subfab4,subfab5,subfab6,subfab7;
+    private Intent in;
 
     @Nullable
     @Override
@@ -117,20 +121,16 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
                 }
                 break;
             case R.id.secdet_maghtamostatily:
-                hideMaghta();
-                maghtabtn.setText("مقطع مستطیلی");
+                AlertDialog("مقطع مستطیلی");
                 break;
             case R.id.secdet_maghtatirchebolok:
-                hideMaghta();
-                maghtabtn.setText("تیرچه بلوک");
+                AlertDialog("تیرچه بلوک");
                 break;
             case R.id.secdet_maghtalshekl:
-                hideMaghta();
-                maghtabtn.setText("مقطع L شکل");
+                AlertDialog("مقطع L شکل");
                 break;
             case R.id.secdet_maghtatshekl:
-                hideMaghta();
-                maghtabtn.setText("مقطع T شکل");
+                AlertDialog("مقطع T شکل");
                 break;
             case R.id.secdet_fab:
                 if(subfab1.isShown()){
@@ -451,7 +451,7 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
         Toast.makeText(getContext(),"آیین نامه مورد نظر را انتخاب کنید",Toast.LENGTH_LONG).show();
     }
 
-    private void hideMaghta(){
+    public void hideMaghta(){
         maghtamostatily.setVisibility(View.GONE);
         maghtamostatily.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.ayinnameiran_fadeout));
         maghtatirchebolok.setVisibility(View.GONE);
@@ -498,6 +498,23 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
         ayinnamebtn.animate().translationY((float) dpToPx(0)).translationX((float) dpToPx(0)).rotation(90).setDuration(350).start();
         maghtabtn.animate().translationY((float) dpToPx(0)).translationX((float) dpToPx(0)).rotation(-90).setDuration(350).start();
         arrow = 0;
+    }
+
+    private void AlertDialog(final String maghtaType){
+        new AlertDialog.Builder(getContext())
+                .setMessage("آیا مایل به تعویض مقطع هستید؟")
+                .setPositiveButton("ریست اطلاعات", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        hideMaghta();
+                        maghtabtn.setText(maghtaType);
+                    }
+                })
+                .setNegativeButton("انصراف", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .show();
     }
 
     public void Initiate(){
