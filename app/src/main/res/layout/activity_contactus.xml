@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="ir.matarata.construction.ContactusActivity">
 
     <android.support.v7.widget.Toolbar
@@ -14,11 +15,120 @@
         android:theme="@style/ThemeOverlay.MyTheme"
         android:elevation="4dp" >
 
-        <android.support.v7.widget.AppCompatTextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:text="       ارتباط با ما"
             android:id="@+id/contactus_toolbartitle"/>
 
     </android.support.v7.widget.Toolbar>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/contactus_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/contactus_toolbar"
+        android:hint="نام"
+        app:met_floatingLabelTextSize="14dp"
+        app:met_baseColor="#000000"
+        app:met_textColorHint="#bdbdbd"
+        app:met_underlineColor="#bdbdbd"
+        android:cursorVisible="true"
+        app:met_floatingLabelTextColor="#e91e63"
+        android:gravity="right"
+        android:maxLines="1"
+        android:inputType="text"
+        android:elevation="5dp"
+        android:clickable="true"
+        app:met_floatingLabel="normal"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/contactus_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/contactus_name"
+        android:hint="ایمیل (اختیاری)"
+        app:met_floatingLabelTextSize="14dp"
+        app:met_baseColor="#000000"
+        app:met_textColorHint="#bdbdbd"
+        app:met_underlineColor="#bdbdbd"
+        android:cursorVisible="true"
+        app:met_floatingLabelTextColor="#e91e63"
+        android:gravity="right"
+        android:maxLines="1"
+        android:inputType="textEmailAddress"
+        android:elevation="5dp"
+        android:clickable="true"
+        app:met_floatingLabel="normal"/>
+
+    <CheckBox
+        android:id="@+id/contactus_criticscb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:text=""
+        android:layout_below="@+id/contactus_email"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/contactus_criticscb"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/contactus_email"
+        android:text="پیشنهاد"/>
+
+    <CheckBox
+        android:id="@+id/contactus_suggestscb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:text=""
+        android:layout_below="@+id/contactus_criticscb"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/contactus_suggestscb"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/contactus_criticscb"
+        android:text="انتقاد"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/contactus_critics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/contactus_suggestscb"
+        android:hint="انتقاد و پیشنهاد"
+        app:met_floatingLabelTextSize="14dp"
+        app:met_baseColor="#000000"
+        app:met_textColorHint="#bdbdbd"
+        app:met_underlineColor="#bdbdbd"
+        android:cursorVisible="true"
+        app:met_floatingLabelTextColor="#e91e63"
+        android:gravity="top|right"
+        android:lines="4"
+        android:minLines="4"
+        android:maxLines="4"
+        android:inputType="textMultiLine"
+        android:elevation="5dp"
+        android:clickable="true"
+        app:met_floatingLabel="normal"/>
 
 </RelativeLayout>
