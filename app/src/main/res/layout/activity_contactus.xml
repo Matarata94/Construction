@@ -73,17 +73,18 @@
         android:id="@+id/contactus_criticscb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
         android:text=""
+        android:checked="true"
         android:layout_below="@+id/contactus_email"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/contactus_criticscb"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:textStyle="bold"
         android:layout_below="@+id/contactus_email"
         android:text="پیشنهاد"/>
@@ -92,19 +93,19 @@
         android:id="@+id/contactus_suggestscb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="20dp"
-        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="75dp"
+        android:layout_toLeftOf="@+id/contactus_criticscb"
         android:text=""
-        android:layout_below="@+id/contactus_criticscb"/>
+        android:layout_below="@+id/contactus_email"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/contactus_suggestscb"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:textStyle="bold"
-        android:layout_below="@+id/contactus_criticscb"
+        android:layout_below="@+id/contactus_email"
         android:text="انتقاد"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
@@ -115,7 +116,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="3dp"
         android:layout_below="@+id/contactus_suggestscb"
-        android:hint="انتقاد و پیشنهاد"
+        android:hint="پیشنهادات"
         app:met_floatingLabelTextSize="14dp"
         app:met_baseColor="#000000"
         app:met_textColorHint="#bdbdbd"
@@ -130,5 +131,15 @@
         android:elevation="5dp"
         android:clickable="true"
         app:met_floatingLabel="normal"/>
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/contactus_send"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contactus_critics"
+        android:layout_marginTop="85dp"
+        android:layout_centerHorizontal="true"
+        android:background="#1E88E5"
+        android:text="ارسال"/>
 
 </RelativeLayout>
