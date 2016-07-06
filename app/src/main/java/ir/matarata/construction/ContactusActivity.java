@@ -29,6 +29,7 @@ public class ContactusActivity extends AppCompatActivity {
     private CheckBox criticscb,suggestscb;
     private LoadToast lt;
     private ButtonRectangle sendbtn;
+    private String contentOfEmailType="",contentOfEmail="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,16 +98,23 @@ public class ContactusActivity extends AppCompatActivity {
         sendbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //lt = new LoadToast(ContactusActivity.this).setText("در حال ارسال ...").setTranslationY(100).show();
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"mostafafahimi73@gmail.com"});
-                i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
-                i.putExtra(Intent.EXTRA_TEXT   , "body of email");
-                try {
-                    startActivity(Intent.createChooser(i, "Send mail..."));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(ContactusActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                if(nameet.getText().toString().equals("") | emailet.getText().toString().equals("") | criticset.getText().toString().equals("")){
+                    Toast.makeText(ContactusActivity.this, "لطفا تمام فیلدها را پر نمایید!", Toast.LENGTH_LONG).show();
+                }else if(nameet.getText().toString().length() < 3){
+                    Toast.makeText(ContactusActivity.this, "نام باید حداقل 3 حرف باشد!", Toast.LENGTH_LONG).show();
+                }else{
+                    contentOfEmailType = criticset.getHint().toString();
+                    contentOfEmail = criticset.getText().toString() + "\n\n" + nameet.getText().toString() + " , " + emailet.getText().toString();
+                    Intent i = new Intent(Intent.ACTION_SEND);
+                    i.setType("text/plain");
+                    i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"mostafafahimi73@gmail.com"});
+                    i.putExtra(Intent.EXTRA_SUBJECT, contentOfEmailType);
+                    i.putExtra(Intent.EXTRA_TEXT   , contentOfEmail);
+                    try {
+                        startActivity(Intent.createChooser(i, "ارسال ایمیل..."));
+                    } catch (android.content.ActivityNotFoundException ex) {
+                        Toast.makeText(ContactusActivity.this, "هیچ نرم افزاری برای ارسال ایمیل یافت نشد!", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
