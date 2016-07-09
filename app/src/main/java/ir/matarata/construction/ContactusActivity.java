@@ -2,22 +2,18 @@ package ir.matarata.construction;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.os.CountDownTimer;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gc.materialdesign.views.ButtonRectangle;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import net.steamcrafted.loadtoast.LoadToast;
@@ -28,7 +24,7 @@ public class ContactusActivity extends AppCompatActivity {
     private MaterialEditText nameet,emailet,criticset;
     private CheckBox criticscb,suggestscb;
     private LoadToast lt;
-    private ButtonRectangle sendbtn;
+    private AppCompatButton sendbtn;
     private String contentOfEmailType="",contentOfEmail="";
 
     @Override
@@ -48,7 +44,7 @@ public class ContactusActivity extends AppCompatActivity {
         criticset = (MaterialEditText) findViewById(R.id.contactus_critics);
         criticscb = (CheckBox) findViewById(R.id.contactus_criticscb);
         suggestscb = (CheckBox) findViewById(R.id.contactus_suggestscb);
-        sendbtn = (ButtonRectangle) findViewById(R.id.contactus_send);
+        sendbtn = (AppCompatButton) findViewById(R.id.contactus_send);
         lt = new LoadToast(this);
 
         criticscb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

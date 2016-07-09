@@ -66,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
                         Intent in =new Intent(MainActivity.this,ContactusActivity.class);
                         startActivity(in);
                         break;
+                    case R.id.nav_item_setting:
+                        Intent in2 =new Intent(MainActivity.this,SettingActivity.class);
+                        startActivity(in2);
+                        break;
                 }
                 return false;
             }

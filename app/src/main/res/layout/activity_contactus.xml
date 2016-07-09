@@ -131,14 +131,25 @@
         app:met_floatingLabel="normal"
         app:met_maxCharacters="1000"/>
 
-    <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/contactus_send"
-        android:layout_width="140dp"
+    <com.andexert.library.RippleView
+        android:id="@+id/contactus_sendripple"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/contactus_critics"
         android:layout_marginTop="85dp"
         android:layout_centerHorizontal="true"
-        android:background="#1E88E5"
-        android:text="ارسال"/>
+        app:rv_rippleDuration="100"
+        app:rv_color="#bbdefb">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/contactus_send"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            android:text="ارسال"
+            android:textColor="#ffffff"
+            android:elevation="5dp"/>
+
+    </com.andexert.library.RippleView>
 
 </RelativeLayout>

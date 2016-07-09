@@ -719,7 +719,7 @@
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="125dp"
         fab:type="MINI"
-        app:image="@drawable/kgf_mm"
+        app:image="@drawable/kgf_cm"
         fab:button_color="#26a69a"
         fab:button_colorPressed="#26a69a"
         fab:image_size="50dp"
@@ -743,7 +743,7 @@
         fab:type="MINI"
         fab:button_color="#26a69a"
         fab:button_colorPressed="#26a69a"
-        fab:image="@drawable/kgf_mm"
+        fab:image="@drawable/kgf_m"
         fab:image_size="50dp"
         fab:shadow_color="#b2dfdb"
         fab:shadow_radius="5.0dp"
@@ -765,7 +765,7 @@
         fab:type="MINI"
         fab:button_color="#26a69a"
         fab:button_colorPressed="#26a69a"
-        fab:image="@drawable/kgf_mm"
+        fab:image="@drawable/tonf_m"
         fab:image_size="50dp"
         fab:shadow_color="#b2dfdb"
         fab:shadow_radius="5.0dp"
@@ -792,22 +792,7 @@
         fab:shadow_xOffset="0.0dp"
         fab:shadow_yOffset="3.0dp"
         fab:button_colorRipple="#fb78a5"
-        android:visibility="gone"
         fab:rippleEffect_enabled="true"/>
-
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/testfab"
-        android:layout_margin="16dp"
-        app:fabSize="normal"
-        app:elevation="5dp"
-        app:backgroundTint="#000000"
-        android:src="@drawable/closeicon"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        app:pressedTranslationZ="8dp"
-        app:rippleColor="@color/emerald"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
