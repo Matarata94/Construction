@@ -10,7 +10,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_dark"
+        android:background="@color/colorPrimary"
         android:id="@+id/contactus_toolbar"
         android:theme="@style/ThemeOverlay.MyTheme"
         android:elevation="4dp" >
@@ -138,7 +138,7 @@
         android:layout_below="@+id/contactus_critics"
         android:layout_marginTop="85dp"
         android:layout_centerHorizontal="true"
-        app:rv_rippleDuration="100"
+        app:rv_rippleDuration="200"
         app:rv_color="#bbdefb">
 
         <android.support.v7.widget.AppCompatButton

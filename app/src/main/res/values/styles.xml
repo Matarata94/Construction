@@ -3,11 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/teal_dark</item>
-        <item name="colorPrimaryDark">@color/teal_light</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryLight</item>
     </style>
     <style name="ThemeOverlay.MyTheme" parent="ThemeOverlay.AppCompat.Dark">
-        <item name="android:colorBackground">@color/teal_lighter</item>
+        <item name="android:colorBackground">@color/colorPrimaryLightest</item>
         <item name="android:textColor">#ffffff</item>
     </style>
     <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">

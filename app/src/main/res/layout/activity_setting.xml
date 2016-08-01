@@ -11,7 +11,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_dark"
+        android:background="@color/colorPrimary"
         android:id="@+id/setting_toolbar"
         android:theme="@style/ThemeOverlay.MyTheme"
         android:elevation="4dp" >
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_alignParentRight="true"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textColor="#616161"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
@@ -93,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_alignParentRight="true"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textColor="#616161"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
@@ -110,7 +110,7 @@
             android:layout_marginLeft="20dp"
             android:text="20"
             android:textColor="#bdbdbd"
-            android:textSize="18dp"/>
+            android:textSize="15dp"/>
 
     </com.andexert.library.RippleView>
 
@@ -139,7 +139,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_alignParentRight="true"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textColor="#616161"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
@@ -156,7 +156,7 @@
             android:layout_marginLeft="20dp"
             android:text="3"
             android:textColor="#bdbdbd"
-            android:textSize="18dp"/>
+            android:textSize="15dp"/>
 
     </com.andexert.library.RippleView>
 
@@ -167,8 +167,116 @@
         android:background="#bdbdbd"
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_below="@+id/setting_thirdripple">
+        android:layout_below="@+id/setting_thirdripple"/>
 
-    </View>
+    <com.andexert.library.RippleView
+        android:id="@+id/setting_fourthripple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_thirdview"
+        app:rv_color="#29b6f6"
+        app:rv_rippleDuration="0"
+        rv_centered="true">
+
+        <TextView
+            android:id="@+id/setting_tv_defaultkeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:textSize="15dp"
+            android:textColor="#616161"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="   صفحه کلید پیشفرض"/>
+
+        <com.rey.material.widget.Switch
+            android:id="@+id/setting_switch_defaultkeyboard"
+            style="@style/Material.Widget.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setting_thirdview"
+            android:layout_alignLeft="@+id/setting_tv_defaultkeyboard"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:checked="false"/>
+
+    </com.andexert.library.RippleView>
+
+    <View
+        android:id="@+id/setting_fourthview"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bdbdbd"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/setting_fourthripple"/>
+
+    <com.andexert.library.RippleView
+        android:id="@+id/setting_fifthripple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_fourthview"
+        app:rv_color="#29b6f6"
+        app:rv_rippleDuration="0"
+        rv_centered="true">
+
+        <TextView
+            android:id="@+id/setting_tv_savesdcard"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:textSize="15dp"
+            android:textColor="#616161"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="   ذخیره اطلاعات در کارت حافظه"/>
+
+        <com.rey.material.widget.Switch
+            android:id="@+id/setting_switch_savesdcard"
+            style="@style/Material.Widget.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setting_fourthview"
+            android:layout_alignLeft="@+id/setting_tv_savesdcard"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:checked="false"/>
+
+    </com.andexert.library.RippleView>
+
+    <View
+        android:id="@+id/setting_fifthview"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bdbdbd"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/setting_fifthripple"/>
+
+    <com.andexert.library.RippleView
+        android:id="@+id/setting_sixthripple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_fifthview"
+        android:layout_marginTop="85dp"
+        android:layout_centerHorizontal="true"
+        app:rv_rippleDuration="200"
+        app:rv_color="#bbdefb">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/setting_btn_save"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            android:text="ذخیره"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:elevation="5dp"/>
+
+    </com.andexert.library.RippleView>
 
 </RelativeLayout>
