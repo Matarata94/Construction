@@ -1,11 +1,14 @@
 package ir.matarata.construction;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.provider.Settings;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,6 +25,8 @@ import com.andexert.library.RippleView;
 import com.github.pavlospt.CircleView;
 import com.rey.material.widget.Switch;
 
+import biz.kasual.materialnumberpicker.MaterialNumberPicker;
+
 public class SettingActivity extends AppCompatActivity implements ColorChooserDialog.ColorCallback{
 
     private Toolbar toolbar;
@@ -33,7 +38,9 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
     private Typeface bfarnaz,iransans;
     private ColorChooserDialog colorChooserDialog;
     private String hexColor="",dbHexColor;
+    private int decimalNumber=0,dbDecimalNumber;
     private database db;
+    private MaterialNumberPicker numberPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +50,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
         db = new database(this);
         db.open();
         dbHexColor = db.Query(1,1);
+        dbDecimalNumber = Integer.parseInt(db.Query(2,1));
         db.close();
         Initiate();
 
@@ -60,9 +68,37 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                         .show();
             }
         });
+        thirdripple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberPicker = new MaterialNumberPicker.Builder(SettingActivity.this)
+                        .minValue(1)
+                        .maxValue(5)
+                        .defaultValue(1)
+                        .backgroundColor(Color.WHITE)
+                        .separatorColor(Color.TRANSPARENT)
+                        .textColor(Color.BLACK)
+                        .textSize(20)
+                        .enableFocusability(false)
+                        .wrapSelectorWheel(true)
+                        .build();
+                new AlertDialog.Builder(SettingActivity.this)
+                        .setTitle("انتخاب تعداد اعشار")
+                        .setView(numberPicker)
+                        .setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                tvdecimaldata.setText(String.valueOf(numberPicker.getValue()));
+                                decimalNumber = numberPicker.getValue();
+                            }
+                        })
+                        .show();
+            }
+        });
         sixthripple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ///Wrong conditions. Should be correct!
                 if (hexColor != "") {
                     db.open();
                     db.Update(hexColor,1,"color_code");
@@ -82,6 +118,10 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                             })
                             .negativeText("انصراف")
                             .show();
+                }else if(decimalNumber != 0){
+                    db.open();
+                    db.Update(String.valueOf(numberPicker.getValue()),1,"decimal");
+                    db.close();
                 }else{
                     Toast.makeText(SettingActivity.this, "تغییری صورت نگرفته است!", Toast.LENGTH_LONG).show();
                 }
@@ -130,6 +170,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
         toolbar.setBackgroundColor(Color.parseColor(dbHexColor));
         cvtheme.setFillColor(Color.parseColor(dbHexColor));
         btnsave.setBackgroundColor(Color.parseColor(dbHexColor));
+        //tvdecimaldata.setText(dbDecimalNumber);
     }
 
     @Override
