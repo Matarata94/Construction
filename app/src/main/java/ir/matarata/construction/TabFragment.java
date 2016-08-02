@@ -1,5 +1,6 @@
 package ir.matarata.construction;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -34,6 +35,10 @@ public class TabFragment extends Fragment {
         View x =  inflater.inflate(R.layout.tab_layout,null);
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
+        database db = new database(getContext());
+        db.open();
+        tabLayout.setBackgroundColor(Color.parseColor(db.Query(1,1)));
+        db.close();
 
         /**
          *Set an Apater for the View Pager

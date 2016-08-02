@@ -16,6 +16,7 @@ public class OpenActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
             }
             public void onFinish() {
+
                 Intent in = new Intent(OpenActivity.this,MainActivity.class);
                 startActivity(in);
                 finish();

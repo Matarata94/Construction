@@ -1,6 +1,7 @@
 package ir.matarata.construction;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ public class ContactusActivity extends AppCompatActivity {
     private LoadToast lt;
     private AppCompatButton sendbtn;
     private String contentOfEmailType="",contentOfEmail="";
+    private database db;
+    private String dbHexColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,10 @@ public class ContactusActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        db = new database(this);
+        db.open();
+        dbHexColor = db.Query(1,1);
+        db.close();
         Typeface myfont = Typeface.createFromAsset(getAssets(), "BFARNAZ.TTF");
         TextView tv_ins = (TextView) findViewById(R.id.contactus_toolbartitle);
         tv_ins.setTypeface(myfont);
@@ -45,6 +52,8 @@ public class ContactusActivity extends AppCompatActivity {
         criticscb = (CheckBox) findViewById(R.id.contactus_criticscb);
         suggestscb = (CheckBox) findViewById(R.id.contactus_suggestscb);
         sendbtn = (AppCompatButton) findViewById(R.id.contactus_send);
+        toolbar.setBackgroundColor(Color.parseColor(dbHexColor));
+        sendbtn.setBackgroundColor(Color.parseColor(dbHexColor));
         lt = new LoadToast(this);
 
         criticscb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

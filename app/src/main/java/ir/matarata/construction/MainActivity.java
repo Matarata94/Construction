@@ -1,6 +1,7 @@
 package ir.matarata.construction;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
@@ -19,11 +20,14 @@ import android.text.style.AlignmentSpan;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private SectionDetailsFragment secdet;
+    private database db;
+    private String mainColor;
 
     DrawerLayout mDrawerLayout;
     NavigationView mNavigationView;
@@ -35,10 +39,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        db = new database(this);
+        db.databasecreate();
+        db.open();
+        mainColor = db.Query(1,1);
+        db.close();
         secdet = new SectionDetailsFragment();
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setBackgroundColor(Color.parseColor(mainColor));
         Typeface myfont = Typeface.createFromAsset(getAssets(), "BFARNAZ.TTF");
         android.support.v7.widget.AppCompatTextView tv_ins = (android.support.v7.widget.AppCompatTextView) findViewById(R.id.toolbar_title);
         tv_ins.setText("همراه سازه");
