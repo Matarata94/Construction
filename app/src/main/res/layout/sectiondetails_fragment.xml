@@ -101,7 +101,7 @@
             android:layout_toRightOf="@+id/secdet_toprltv1"
             android:textColor="#e91e63"
             android:textSize="14dp"
-            android:text="60 cm" />
+            android:text="--" />
 
         <TextView
             android:id="@+id/secdet_toprltv2data"
@@ -112,7 +112,7 @@
             android:layout_marginTop="10dp"
             android:textColor="#e91e63"
             android:textSize="14dp"
-            android:text="40 cm" />
+            android:text="--" />
 
         <TextView
             android:id="@+id/secdet_toprltv3data"
@@ -123,7 +123,7 @@
             android:layout_marginTop="10dp"
             android:textColor="#e91e63"
             android:textSize="14dp"
-            android:text="5 cm" />
+            android:text="--" />
 
         <TextView
             android:id="@+id/secdet_toprltv4data"
@@ -134,7 +134,7 @@
             android:layout_marginTop="10dp"
             android:textColor="#e91e63"
             android:textSize="14dp"
-            android:text="55 cm" />
+            android:text="--" />
 
         <TextView
             android:id="@+id/secdet_toprltv5data"
@@ -146,7 +146,7 @@
             android:layout_marginTop="10dp"
             android:textColor="#e91e63"
             android:textSize="14dp"
-            android:text="270 kgf/cm" />
+            android:text="--" />
 
         <TextView
             android:id="@+id/secdet_toprltv6data"
@@ -157,7 +157,7 @@
             android:layout_marginTop="10dp"
             android:textColor="#e91e63"
             android:textSize="14dp"
-            android:text="200 kgf/cm" />
+            android:text="--" />
 
     </RelativeLayout>
 

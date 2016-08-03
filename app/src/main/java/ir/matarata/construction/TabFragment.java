@@ -11,11 +11,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
-import java.util.Calendar;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by Matarata on 5/24/2016.
@@ -37,7 +32,7 @@ public class TabFragment extends Fragment {
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
         database db = new database(getContext());
         db.open();
-        tabLayout.setBackgroundColor(Color.parseColor(db.Query(1,1)));
+        tabLayout.setBackgroundColor(Color.parseColor(db.QuerySetting(1,1)));
         db.close();
 
         /**

@@ -4,10 +4,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.provider.Settings;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,10 +35,11 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
     private Switch swdefaultkeyboard,swsavesdcard;
     private Typeface bfarnaz,iransans;
     private ColorChooserDialog colorChooserDialog;
-    private String hexColor="",dbHexColor;
+    private String hexColor="",dbHexColor,swkeyboardValue="",dbSwKeayboardValue,swSaveSDcardValue="",dbSwSaveSDcard;
     private int decimalNumber=0,dbDecimalNumber;
     private database db;
     private MaterialNumberPicker numberPicker;
+    private String settingChanged="no";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +48,10 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
 
         db = new database(this);
         db.open();
-        dbHexColor = db.Query(1,1);
-        dbDecimalNumber = Integer.parseInt(db.Query(2,1));
+        dbHexColor = db.QuerySetting(1,1);
+        dbDecimalNumber = Integer.parseInt(db.QuerySetting(2,1));
+        dbSwKeayboardValue = db.QuerySetting(3,1);
+        dbSwSaveSDcard = db.QuerySetting(4,1);
         db.close();
         Initiate();
 
@@ -68,13 +69,39 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                         .show();
             }
         });
+        secondripple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db.open();
+                db.UpdateSetting(db.QuerySetting(1,2),1,"color_code");
+                db.UpdateSetting(db.QuerySetting(2,2),1,"decimal");
+                db.UpdateSetting(db.QuerySetting(3,2),1,"keyboard_type");
+                db.UpdateSetting(db.QuerySetting(4,2),1,"save_sdcard");
+                db.close();
+                new MaterialDialog.Builder(SettingActivity.this)
+                        .content(R.string.setting_savebtn_dialog_content)
+                        .positiveText("تایید")
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                System.exit(0);
+                                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("ir.matarata.construction");
+                                if (launchIntent != null) {
+                                    startActivity(launchIntent);//null pointer check in case package name was not found
+                                }
+                            }
+                        })
+                        .negativeText("انصراف")
+                        .show();
+            }
+        });
         thirdripple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 numberPicker = new MaterialNumberPicker.Builder(SettingActivity.this)
                         .minValue(1)
                         .maxValue(5)
-                        .defaultValue(1)
+                        .defaultValue(dbDecimalNumber)
                         .backgroundColor(Color.WHITE)
                         .separatorColor(Color.TRANSPARENT)
                         .textColor(Color.BLACK)
@@ -90,6 +117,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                             public void onClick(DialogInterface dialog, int which) {
                                 tvdecimaldata.setText(String.valueOf(numberPicker.getValue()));
                                 decimalNumber = numberPicker.getValue();
+                                settingChanged = "yes";
                             }
                         })
                         .show();
@@ -98,10 +126,20 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
         sixthripple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ///Wrong conditions. Should be correct!
-                if (hexColor != "") {
+                if(settingChanged.equals("yes")){
                     db.open();
-                    db.Update(hexColor,1,"color_code");
+                    if(hexColor != ""){
+                        db.UpdateSetting(hexColor,1,"color_code");
+                    }
+                    if(decimalNumber != 0){
+                        db.UpdateSetting(String.valueOf(numberPicker.getValue()),1,"decimal");
+                    }
+                    if(!swkeyboardValue.equals("")){
+                        db.UpdateSetting(swkeyboardValue,1,"keyboard_type");
+                    }
+                    if(!swSaveSDcardValue.equals("")){
+                        db.UpdateSetting(swSaveSDcardValue,1,"save_sdcard");
+                    }
                     db.close();
                     new MaterialDialog.Builder(SettingActivity.this)
                             .content(R.string.setting_savebtn_dialog_content)
@@ -118,21 +156,51 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                             })
                             .negativeText("انصراف")
                             .show();
-                }else if(decimalNumber != 0){
-                    db.open();
-                    db.Update(String.valueOf(numberPicker.getValue()),1,"decimal");
-                    db.close();
-                }else{
-                    Toast.makeText(SettingActivity.this, "تغییری صورت نگرفته است!", Toast.LENGTH_LONG).show();
+                }else if(settingChanged.equals("no")){
+                    Toast.makeText(SettingActivity.this, "تغییری صورت نگرفته است!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        swdefaultkeyboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(swdefaultkeyboard.isChecked() && dbSwKeayboardValue.equals("app_keyboard")){
+                    swkeyboardValue = "device_keyboard";
+                    settingChanged = "yes";
+                }else if(!swdefaultkeyboard.isChecked() && dbSwKeayboardValue.equals("app_keyboard")){
+                    swkeyboardValue = "";
+                }else if(!swdefaultkeyboard.isChecked() && dbSwKeayboardValue.equals("device_keyboard")){
+                    swkeyboardValue = "app_keyboard";
+                    settingChanged = "yes";
+                }else if(swdefaultkeyboard.isChecked() && dbSwKeayboardValue.equals("device_keyboard")){
+                    swkeyboardValue = "";
+                }
+            }
+        });
+        swsavesdcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!swsavesdcard.isChecked() && dbSwSaveSDcard.equals("yes")){
+                    swSaveSDcardValue = "no";
+                    settingChanged = "yes";
+                }else if(swsavesdcard.isChecked() && dbSwSaveSDcard.equals("yes")){
+                    swSaveSDcardValue = "";
+                }else if(swsavesdcard.isChecked() && dbSwSaveSDcard.equals("no")){
+                    swSaveSDcardValue = "yes";
+                    settingChanged = "yes";
+                }else if(!swsavesdcard.isChecked() && dbSwSaveSDcard.equals("no")){
+                    swSaveSDcardValue = "";
+                }
+            }
+        });
+
 
     }
 
     @Override
     public void onColorSelection(@NonNull ColorChooserDialog dialog, @ColorInt int color) {
         hexColor = String.format("#%06X", (0xFFFFFF & color));
+        settingChanged = "yes";
     }
 
     private void Initiate(){
@@ -170,7 +238,15 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
         toolbar.setBackgroundColor(Color.parseColor(dbHexColor));
         cvtheme.setFillColor(Color.parseColor(dbHexColor));
         btnsave.setBackgroundColor(Color.parseColor(dbHexColor));
-        //tvdecimaldata.setText(dbDecimalNumber);
+        tvdecimaldata.setText(String.valueOf(dbDecimalNumber));
+        if(dbSwSaveSDcard.equals("yes")){
+            swsavesdcard.setChecked(true);
+        }
+        if(dbSwKeayboardValue.equals("app_keyboard")){
+            swdefaultkeyboard.setChecked(false);
+        }else if(dbSwKeayboardValue.equals("device_keyboard")){
+            swdefaultkeyboard.setChecked(true);
+        }
     }
 
     @Override

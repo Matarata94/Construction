@@ -7,9 +7,11 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -26,6 +28,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.dd.morphingbutton.MorphingButton;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.software.shell.fab.ActionButton;
@@ -49,23 +53,17 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
     public static KeyboardFragment keyboard_fragment;
     public static ActionButton fab,subfab1,subfab2,subfab3,subfab4,subfab5,subfab6,subfab7;
     private Intent in;
+    private database db;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.sectiondetails_fragment,container,false);
         Initiate();
-
-        /*fab.setButtonColor(Color.parseColor("#FF4081"));
-        fab.setButtonColorPressed(Color.parseColor("#FF4081"));
-        fab.setShadowColor(Color.parseColor("#f8bbd0"));
-        fab.setShadowRadius(5.0f);
-        fab.setShadowXOffset(0.0f);
-        fab.setShadowYOffset(3.0f);
-        fab.setImageResource(R.drawable.n_mm);
-        fab.setImageSize(60.0f);
-        fab.setRippleEffectEnabled(true);
-        fab.setButtonColorRipple(Color.parseColor("#fb78a5"));*/
+        db = new database(getActivity());
+        db.open();
+        maghtabtn.setText(db.QueryInformation(1,1));
+        db.close();
 
         return view;
     }
@@ -367,10 +365,11 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         v.onTouchEvent(event);
-        InputMethodManager imm = (InputMethodManager)v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        //Disable default device keyboard
+        /*InputMethodManager imm = (InputMethodManager)v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-        }
+        }*/
         return true;
     }
 
@@ -501,19 +500,21 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
     }
 
     private void AlertDialog(final String maghtaType){
-        new AlertDialog.Builder(getContext())
-                .setMessage("آیا مایل به تعویض مقطع هستید؟")
-                .setPositiveButton("ریست اطلاعات", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        hideMaghta();
-                        maghtabtn.setText(maghtaType);
+        new MaterialDialog.Builder(getActivity())
+                .content(R.string.sectionDetails_resetMaghta_dialog_content)
+                .positiveText("تایید")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        FragmentTransaction xfragmentTransaction = MainActivity.mFragmentManager.beginTransaction();
+                        xfragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
+                        MainActivity.currentTab = 1;
+                        db.open();
+                        db.UpdateInformation(maghtaType,1,"maghta_type");
+                        db.close();
                     }
                 })
-                .setNegativeButton("انصراف", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                })
+                .negativeText("انصراف")
                 .show();
     }
 
@@ -587,7 +588,6 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
         subfab6.hide();
         subfab7.hide();
         //set font
-        //PersianFont = Typeface.createFromAsset(getContext().getAssets(), "IRANSansWeb.ttf");
         EnglishFont = Typeface.createFromAsset(getContext().getAssets(), "caviardreams.ttf");
         tv1.setTypeface(EnglishFont);
         tv2.setTypeface(EnglishFont);
@@ -650,7 +650,6 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
         maghtatirchebolok.setOnClickListener(this);
         maghtalshekl.setOnClickListener(this);
         maghtatshekl.setOnClickListener(this);
-
         meth.setOnFocusChangeListener(this);
         metb.setOnFocusChangeListener(this);
         spdownarm.setOnFocusChangeListener(this);

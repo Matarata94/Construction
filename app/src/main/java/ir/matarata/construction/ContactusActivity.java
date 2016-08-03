@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
@@ -41,7 +40,7 @@ public class ContactusActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         db = new database(this);
         db.open();
-        dbHexColor = db.Query(1,1);
+        dbHexColor = db.QuerySetting(1,1);
         db.close();
         Typeface myfont = Typeface.createFromAsset(getAssets(), "BFARNAZ.TTF");
         TextView tv_ins = (TextView) findViewById(R.id.contactus_toolbartitle);

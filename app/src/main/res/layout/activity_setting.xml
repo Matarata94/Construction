@@ -142,7 +142,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
             android:gravity="center_vertical"
-            android:text="   صفحه کلید پیشفرض"/>
+            android:text="   صفحه کلید دستگاه"/>
 
         <com.rey.material.widget.Switch
             android:id="@+id/setting_switch_defaultkeyboard"

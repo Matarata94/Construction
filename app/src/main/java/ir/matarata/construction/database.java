@@ -17,7 +17,6 @@ public class database extends SQLiteOpenHelper {
 	private final Context mycontext;
 	public final String path = "data/data/ir.matarata.construction/databases/";
 	public final String dbname = "constructiondb.db3";
-	public final String tblname = "setting";
 	public SQLiteDatabase mydb;
 	
 	public database(Context context) {
@@ -71,23 +70,29 @@ public class database extends SQLiteOpenHelper {
 	public void close(){
 		mydb.close();
 	}
-	public String Random(int id,int fild){
-		Cursor cu = mydb.rawQuery("SELECT * FROM FatoEn WHERE ID"+"="+id, null);
+
+	public String QuerySetting(int fild, int id){
+		Cursor cu = mydb.rawQuery("SELECT * FROM setting WHERE id=" + id, null);
 		cu.moveToFirst();
 		String name = cu.getString(fild);
 		cu.close();
 		return name;
 	}
-	public String Query(int fild, int id){
-		Cursor cu = mydb.rawQuery("SELECT * FROM setting WHERE id=" + id, null);
+	public String QueryInformation(int fild, int id){
+		Cursor cu = mydb.rawQuery("SELECT * FROM information WHERE id=" + id, null);
 		cu.moveToFirst();
-		String name2 = cu.getString(fild);
+		String name = cu.getString(fild);
 		cu.close();
-		return name2;
+		return name;
 	}
-	public void Update(String value, int id,String row){
+	public void UpdateSetting(String value, int id, String row){
 		ContentValues cv = new ContentValues();
 		cv.put(row, value);
 		mydb.update("setting", cv, "id=" + id, null);
+	}
+	public void UpdateInformation(String value, int id,String row){
+		ContentValues cv = new ContentValues();
+		cv.put(row, value);
+		mydb.update("information", cv, "id=" + id, null);
 	}
 }

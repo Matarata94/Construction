@@ -6,4 +6,10 @@
     <string name="color_choose_dialog_cancelbtn">انصراف</string>
     <string name="color_choose_dialog_backbtn">بازگشت</string>
     <string name="setting_savebtn_dialog_content">نیاز به راه اندازی مجدد نرم افزار می باشد. آیا ادامه می دهید؟</string>
+    <string name="mainActivity_resetdata_dialog_content">
+        اطلاعات جاری ریست خواهد شد. آیا ادامه می دهید؟
+    </string>
+    <string name="sectionDetails_resetMaghta_dialog_content">
+        با تعویض مقطع اطلاعات ریست خواهد شد. آیا ادامه می دهید؟
+    </string>
 </resources>

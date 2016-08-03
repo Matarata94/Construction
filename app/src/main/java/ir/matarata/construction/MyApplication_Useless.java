@@ -6,16 +6,16 @@ import android.content.Context;
 /**
  * Created by Matarata on 6/16/2016.
  */
-public class MyApplication extends Application {
+public class MyApplication_Useless extends Application {
 
     private static Context context;
 
     public void onCreate() {
         super.onCreate();
-        MyApplication.context = getApplicationContext();
+        MyApplication_Useless.context = getApplicationContext();
     }
 
     public static Context getAppContext() {
-        return MyApplication.context;
+        return MyApplication_Useless.context;
     }
 }
