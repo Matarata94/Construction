@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private SectionDetailsFragment secdet;
     private database db;
     private String mainColor;
-    public static int currentTab=0;
 
     DrawerLayout mDrawerLayout;
     NavigationView mNavigationView;
@@ -80,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
                                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                                         FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                                         xfragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
-                                        currentTab = 1;
                                     }
                                 })
                                 .negativeText("انصراف")

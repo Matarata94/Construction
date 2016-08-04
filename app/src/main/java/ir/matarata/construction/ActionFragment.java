@@ -32,12 +32,13 @@ public class ActionFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.action_fragment,container,false);
-        if(MainActivity.currentTab != 0){
+        if(SectionDetailsFragment.maghtaChanged != 0){
             TabFragment tf = new TabFragment();
-            tf.selectPage(MainActivity.currentTab);
-            MainActivity.currentTab = 0;
+            tf.selectPage(1);
+            SectionDetailsFragment.maghtaChanged = 0;
         }
         defines();
+
 
         firstrl_view.setOnClickListener(new View.OnClickListener() {
             @Override

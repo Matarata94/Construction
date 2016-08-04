@@ -54,6 +54,7 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
     public static ActionButton fab,subfab1,subfab2,subfab3,subfab4,subfab5,subfab6,subfab7;
     private Intent in;
     private database db;
+    public static int maghtaChanged=0;
 
     @Nullable
     @Override
@@ -508,7 +509,7 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         FragmentTransaction xfragmentTransaction = MainActivity.mFragmentManager.beginTransaction();
                         xfragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
-                        MainActivity.currentTab = 1;
+                        maghtaChanged = 1;
                         db.open();
                         db.UpdateInformation(maghtaType,1,"maghta_type");
                         db.close();
