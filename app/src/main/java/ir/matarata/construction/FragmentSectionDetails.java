@@ -501,9 +501,10 @@ public class FragmentSectionDetails extends Fragment implements View.OnClickList
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+
                         FragmentTransaction xfragmentTransaction = ActivityMain.mFragmentManager.beginTransaction();
                         xfragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();
-                        maghtaChanged = 1;
+                        //maghtaChanged = 1;
                         db.open();
                         db.UpdateInformation(maghtaType,1,"maghta_type");
                         db.close();
@@ -673,7 +674,5 @@ public class FragmentSectionDetails extends Fragment implements View.OnClickList
         metfc.setOnTouchListener(this);
         metfy.setOnTouchListener(this);
     }
-
-
 
 }

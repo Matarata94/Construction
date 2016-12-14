@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:weightSum="3"
     android:background="#d5ddda">
 
     <RelativeLayout
         android:id="@+id/am_rl_first"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="155dp"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
+        android:layout_weight="1"
         android:background="@drawable/analyshadow"
         android:scaleType="fitXY" >
 
@@ -51,11 +55,12 @@
 
     <RelativeLayout
         android:id="@+id/am_rl_second"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="155dp"
         android:layout_below="@+id/am_rl_first"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
+        android:layout_weight="1"
         android:background="@drawable/controlshadow" >
 
         <View
@@ -96,11 +101,12 @@
 
     <RelativeLayout
         android:id="@+id/am_rl_third"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="155dp"
         android:layout_below="@+id/am_rl_second"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
+        android:layout_weight="1"
         android:background="@drawable/designshadow" >
 
         <View
@@ -139,4 +145,4 @@
 
     </RelativeLayout>
 
-</RelativeLayout>
+</LinearLayout>

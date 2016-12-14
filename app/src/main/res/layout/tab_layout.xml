@@ -6,6 +6,11 @@
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
+    <ir.matarata.construction.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
@@ -17,16 +22,10 @@
         app:tabSelectedTextColor="#bdbdbd"
         app:tabTextColor="#ffffff"
         app:tabTextAppearance="@style/MineCustomTabText"
+        android:animateLayoutChanges="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.design.widget.TabLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v4.view.ViewPager>
+        android:layout_height="wrap_content"
+        android:elevation="6dp" />
 
 
 

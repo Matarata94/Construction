@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -20,6 +21,9 @@ import android.text.style.AlignmentSpan;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -27,14 +31,14 @@ import com.afollestad.materialdialogs.MaterialDialog;
 public class ActivityMain extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private FragmentSectionDetails secdet;
     private database db;
     private String mainColor;
 
-    DrawerLayout mDrawerLayout;
-    NavigationView mNavigationView;
+    private DrawerLayout mDrawerLayout;
+    private NavigationView mNavigationView;
     public static FragmentManager mFragmentManager;
-    FragmentTransaction mFragmentTransaction;
+    private FragmentTransaction mFragmentTransaction;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +59,8 @@ public class ActivityMain extends AppCompatActivity {
                                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                                     @Override
                                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                        FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
-                                        xfragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();
+                                        mFragmentTransaction = mFragmentManager.beginTransaction();
+                                        mFragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();
                                     }
                                 })
                                 .negativeText("انصراف")
@@ -76,6 +80,38 @@ public class ActivityMain extends AppCompatActivity {
 
         });
 
+    }
+
+    private void initiate(){
+        db = new database(this);
+        db.databasecreate();
+        db.open();
+        mainColor = db.QuerySetting(1,1);
+        db.close();
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setBackgroundColor(Color.parseColor(mainColor));
+        Typeface myfont = Typeface.createFromAsset(getAssets(), "BFARNAZ.TTF");
+        android.support.v7.widget.AppCompatTextView tv_ins = (android.support.v7.widget.AppCompatTextView) findViewById(R.id.toolbar_title);
+        tv_ins.setText("همراه سازه");
+        tv_ins.setGravity(Gravity.CENTER);
+        tv_ins.setTextSize(25);
+        tv_ins.setTypeface(myfont);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mNavigationView = (NavigationView) findViewById(R.id.shitstuff);
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name);
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
+        mDrawerToggle.syncState();
+
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.replace(R.id.containerView, new FragmentAction()).commit();
+
+        /*mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();*/
     }
 
     @Override
@@ -103,34 +139,6 @@ public class ActivityMain extends AppCompatActivity {
         return true;
     }
 
-    private void initiate(){
-        db = new database(this);
-        db.databasecreate();
-        db.open();
-        mainColor = db.QuerySetting(1,1);
-        db.close();
-        secdet = new FragmentSectionDetails();
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setBackgroundColor(Color.parseColor(mainColor));
-        Typeface myfont = Typeface.createFromAsset(getAssets(), "BFARNAZ.TTF");
-        android.support.v7.widget.AppCompatTextView tv_ins = (android.support.v7.widget.AppCompatTextView) findViewById(R.id.toolbar_title);
-        tv_ins.setText("همراه سازه");
-        tv_ins.setGravity(Gravity.CENTER);
-        tv_ins.setTextSize(25);
-        tv_ins.setTypeface(myfont);
-
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        mNavigationView = (NavigationView) findViewById(R.id.shitstuff);
-        ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name);
-        mDrawerLayout.addDrawerListener(mDrawerToggle);
-        mDrawerToggle.syncState();
-
-        mFragmentManager = getSupportFragmentManager();
-        mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
