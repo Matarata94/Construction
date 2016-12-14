@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 /**
  * Created by Matarata on 5/24/2016.
  */
-public class TabFragment extends Fragment {
+public class FragmentTab extends Fragment {
 
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
@@ -70,10 +70,10 @@ public class TabFragment extends Fragment {
         public Fragment getItem(int position)
         {
             switch (position){
-                case 0 : return new ActionFragment();
-                case 1 : return new SectionDetailsFragment();
-                case 2 : return new SummaryCalcFragment();
-                case 3 : return new TinyCalcFragment();
+                case 0 : return new FragmentAction();
+                case 1 : return new FragmentSectionDetails();
+                case 2 : return new FragmentSummaryCalc();
+                case 3 : return new FragmentTinyCalc();
             }
             return null;
         }

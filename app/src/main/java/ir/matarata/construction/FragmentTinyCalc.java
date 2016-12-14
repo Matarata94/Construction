@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 /**
  * Created by Matarata on 5/24/2016.
  */
-public class TinyCalcFragment extends Fragment {
+public class FragmentTinyCalc extends Fragment {
 
     @Nullable
     @Override

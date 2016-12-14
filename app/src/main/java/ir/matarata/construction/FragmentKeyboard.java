@@ -1,20 +1,17 @@
 package ir.matarata.construction;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class KeyboardFragment extends Fragment {
+public class FragmentKeyboard extends Fragment {
 
     private Button one_btn;
     private Button two_btn;
@@ -37,9 +34,9 @@ public class KeyboardFragment extends Fragment {
     private int maxLength=10000;
     public static int currentLength;
 
-    private SectionDetailsFragment secdet = new SectionDetailsFragment();
+    private FragmentSectionDetails secdet = new FragmentSectionDetails();
 
-    public KeyboardFragment() {
+    public FragmentKeyboard() {
         // Required empty public constructor
     }
 
@@ -138,95 +135,95 @@ public class KeyboardFragment extends Fragment {
                 {
                     currentLength--;
                     if(secdet.meth.hasFocus()){
-                        int cursorPosition = SectionDetailsFragment.meth.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.meth.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.meth.setText(sb.toString());
-                            SectionDetailsFragment.meth.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.meth.setText(sb.toString());
+                            FragmentSectionDetails.meth.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.metb.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.metb.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.metb.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.metb.setText(sb.toString());
-                            SectionDetailsFragment.metb.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.metb.setText(sb.toString());
+                            FragmentSectionDetails.metb.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.spdownarm.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.spdownarm.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.spdownarm.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.spdownarm.setText(sb.toString());
-                            SectionDetailsFragment.spdownarm.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.spdownarm.setText(sb.toString());
+                            FragmentSectionDetails.spdownarm.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.spdownarmnumber.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.spdownarmnumber.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.spdownarmnumber.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.spdownarmnumber.setText(sb.toString());
-                            SectionDetailsFragment.spdownarmnumber.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.spdownarmnumber.setText(sb.toString());
+                            FragmentSectionDetails.spdownarmnumber.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.spdownarmcover.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.spdownarmcover.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.spdownarmcover.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.spdownarmcover.setText(sb.toString());
-                            SectionDetailsFragment.spdownarmcover.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.spdownarmcover.setText(sb.toString());
+                            FragmentSectionDetails.spdownarmcover.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.spuparm.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.spuparm.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.spuparm.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.spuparm.setText(sb.toString());
-                            SectionDetailsFragment.spuparm.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.spuparm.setText(sb.toString());
+                            FragmentSectionDetails.spuparm.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.spuparmnumber.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.spuparmnumber.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.spuparmnumber.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.spuparmnumber.setText(sb.toString());
-                            SectionDetailsFragment.spuparmnumber.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.spuparmnumber.setText(sb.toString());
+                            FragmentSectionDetails.spuparmnumber.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.spuparmcover.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.spuparmcover.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.spuparmcover.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.spuparmcover.setText(sb.toString());
-                            SectionDetailsFragment.spuparmcover.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.spuparmcover.setText(sb.toString());
+                            FragmentSectionDetails.spuparmcover.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.spties.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.spties.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.spties.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.spties.setText(sb.toString());
-                            SectionDetailsFragment.spties.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.spties.setText(sb.toString());
+                            FragmentSectionDetails.spties.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.sptiesnumber.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.sptiesnumber.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.sptiesnumber.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.sptiesnumber.setText(sb.toString());
-                            SectionDetailsFragment.sptiesnumber.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.sptiesnumber.setText(sb.toString());
+                            FragmentSectionDetails.sptiesnumber.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.sptiescover.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.sptiescover.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.sptiescover.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.sptiescover.setText(sb.toString());
-                            SectionDetailsFragment.sptiescover.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.sptiescover.setText(sb.toString());
+                            FragmentSectionDetails.sptiescover.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.metfc.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.metfc.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.metfc.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.metfc.setText(sb.toString());
-                            SectionDetailsFragment.metfc.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.metfc.setText(sb.toString());
+                            FragmentSectionDetails.metfc.setSelection(cursorPosition-1);
                         }
                     }else if(secdet.metfy.hasFocus()) {
-                        int cursorPosition = SectionDetailsFragment.metfy.getSelectionStart();
+                        int cursorPosition = FragmentSectionDetails.metfy.getSelectionStart();
                         if(cursorPosition != 0) {
                             sb.deleteCharAt(cursorPosition - 1);
-                            SectionDetailsFragment.metfy.setText(sb.toString());
-                            SectionDetailsFragment.metfy.setSelection(cursorPosition-1);
+                            FragmentSectionDetails.metfy.setText(sb.toString());
+                            FragmentSectionDetails.metfy.setSelection(cursorPosition-1);
                         }
                     }
                 }
@@ -239,56 +236,56 @@ public class KeyboardFragment extends Fragment {
                 currentLength=0;
                 if(secdet.meth.hasFocus()){
                     sb = new StringBuilder();
-                    SectionDetailsFragment.meth.setText(sb.toString());
-                    SectionDetailsFragment.meth.setSelection(0);
+                    FragmentSectionDetails.meth.setText(sb.toString());
+                    FragmentSectionDetails.meth.setSelection(0);
                 }else if(secdet.metb.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.metb.setText(sb.toString());
-                    SectionDetailsFragment.metb.setSelection(0);
+                    FragmentSectionDetails.metb.setText(sb.toString());
+                    FragmentSectionDetails.metb.setSelection(0);
                 }else if(secdet.spdownarm.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.spdownarm.setText(sb.toString());
-                    SectionDetailsFragment.spdownarm.setSelection(0);
+                    FragmentSectionDetails.spdownarm.setText(sb.toString());
+                    FragmentSectionDetails.spdownarm.setSelection(0);
                 }else if(secdet.spdownarmnumber.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.spdownarmnumber.setText(sb.toString());
-                    SectionDetailsFragment.spdownarmnumber.setSelection(0);
+                    FragmentSectionDetails.spdownarmnumber.setText(sb.toString());
+                    FragmentSectionDetails.spdownarmnumber.setSelection(0);
                 }else if(secdet.spdownarmcover.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.spdownarmcover.setText(sb.toString());
-                    SectionDetailsFragment.spdownarmcover.setSelection(0);
+                    FragmentSectionDetails.spdownarmcover.setText(sb.toString());
+                    FragmentSectionDetails.spdownarmcover.setSelection(0);
                 }else if(secdet.spuparm.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.spuparm.setText(sb.toString());
-                    SectionDetailsFragment.spuparm.setSelection(0);
+                    FragmentSectionDetails.spuparm.setText(sb.toString());
+                    FragmentSectionDetails.spuparm.setSelection(0);
                 }else if(secdet.spuparmnumber.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.spuparmnumber.setText(sb.toString());
-                    SectionDetailsFragment.spuparmnumber.setSelection(0);
+                    FragmentSectionDetails.spuparmnumber.setText(sb.toString());
+                    FragmentSectionDetails.spuparmnumber.setSelection(0);
                 }else if(secdet.spuparmcover.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.spuparmcover.setText(sb.toString());
-                    SectionDetailsFragment.spuparmcover.setSelection(0);
+                    FragmentSectionDetails.spuparmcover.setText(sb.toString());
+                    FragmentSectionDetails.spuparmcover.setSelection(0);
                 }else if(secdet.spties.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.spties.setText(sb.toString());
-                    SectionDetailsFragment.spties.setSelection(0);
+                    FragmentSectionDetails.spties.setText(sb.toString());
+                    FragmentSectionDetails.spties.setSelection(0);
                 }else if(secdet.sptiesnumber.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.sptiesnumber.setText(sb.toString());
-                    SectionDetailsFragment.sptiesnumber.setSelection(0);
+                    FragmentSectionDetails.sptiesnumber.setText(sb.toString());
+                    FragmentSectionDetails.sptiesnumber.setSelection(0);
                 }else if(secdet.sptiescover.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.sptiescover.setText(sb.toString());
-                    SectionDetailsFragment.sptiescover.setSelection(0);
+                    FragmentSectionDetails.sptiescover.setText(sb.toString());
+                    FragmentSectionDetails.sptiescover.setSelection(0);
                 }else if(secdet.metfc.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.metfc.setText(sb.toString());
-                    SectionDetailsFragment.metfc.setSelection(0);
+                    FragmentSectionDetails.metfc.setText(sb.toString());
+                    FragmentSectionDetails.metfc.setSelection(0);
                 }else if(secdet.metfy.hasFocus()) {
                     sb = new StringBuilder();
-                    SectionDetailsFragment.metfy.setText(sb.toString());
-                    SectionDetailsFragment.metfy.setSelection(0);
+                    FragmentSectionDetails.metfy.setText(sb.toString());
+                    FragmentSectionDetails.metfy.setSelection(0);
                 }
                 return false;
             }
@@ -311,9 +308,9 @@ public class KeyboardFragment extends Fragment {
         done_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SectionDetailsFragment.keyboard_fragment.isVisible()) {
-                    getActivity().getSupportFragmentManager().beginTransaction().remove(SectionDetailsFragment.keyboard_fragment).commit();
-                    SectionDetailsFragment.keyboard_fragment = null;
+                if(FragmentSectionDetails.keyboard_fragment.isVisible()) {
+                    getActivity().getSupportFragmentManager().beginTransaction().remove(FragmentSectionDetails.keyboard_fragment).commit();
+                    FragmentSectionDetails.keyboard_fragment = null;
                 }
             }
         });
@@ -326,79 +323,79 @@ public class KeyboardFragment extends Fragment {
         if(currentLength<=maxLength)
         {
             if(secdet.meth.hasFocus()){
-                int cursorPosition = SectionDetailsFragment.meth.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.meth.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.meth.setText(sb.toString());
-                SectionDetailsFragment.meth.setSelection(cursorPosition+1);
+                FragmentSectionDetails.meth.setText(sb.toString());
+                FragmentSectionDetails.meth.setSelection(cursorPosition+1);
             }else if(secdet.metb.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.metb.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.metb.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.metb.setText(sb.toString());
-                SectionDetailsFragment.metb.setSelection(cursorPosition+1);
+                FragmentSectionDetails.metb.setText(sb.toString());
+                FragmentSectionDetails.metb.setSelection(cursorPosition+1);
             }else if(secdet.spdownarm.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.spdownarm.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.spdownarm.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.spdownarm.setText(sb.toString());
-                SectionDetailsFragment.spdownarm.setSelection(cursorPosition+1);
+                FragmentSectionDetails.spdownarm.setText(sb.toString());
+                FragmentSectionDetails.spdownarm.setSelection(cursorPosition+1);
             }else if(secdet.spdownarmnumber.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.spdownarmnumber.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.spdownarmnumber.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.spdownarmnumber.setText(sb.toString());
-                SectionDetailsFragment.spdownarmnumber.setSelection(cursorPosition+1);
+                FragmentSectionDetails.spdownarmnumber.setText(sb.toString());
+                FragmentSectionDetails.spdownarmnumber.setSelection(cursorPosition+1);
             }else if(secdet.spdownarmcover.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.spdownarmcover.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.spdownarmcover.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.spdownarmcover.setText(sb.toString());
-                SectionDetailsFragment.spdownarmcover.setSelection(cursorPosition+1);
+                FragmentSectionDetails.spdownarmcover.setText(sb.toString());
+                FragmentSectionDetails.spdownarmcover.setSelection(cursorPosition+1);
             }else if(secdet.spuparm.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.spuparm.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.spuparm.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.spuparm.setText(sb.toString());
-                SectionDetailsFragment.spuparm.setSelection(cursorPosition+1);
+                FragmentSectionDetails.spuparm.setText(sb.toString());
+                FragmentSectionDetails.spuparm.setSelection(cursorPosition+1);
             }else if(secdet.spuparmnumber.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.spuparmnumber.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.spuparmnumber.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.spuparmnumber.setText(sb.toString());
-                SectionDetailsFragment.spuparmnumber.setSelection(cursorPosition+1);
+                FragmentSectionDetails.spuparmnumber.setText(sb.toString());
+                FragmentSectionDetails.spuparmnumber.setSelection(cursorPosition+1);
             }else if(secdet.spuparmcover.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.spuparmcover.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.spuparmcover.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.spuparmcover.setText(sb.toString());
-                SectionDetailsFragment.spuparmcover.setSelection(cursorPosition+1);
+                FragmentSectionDetails.spuparmcover.setText(sb.toString());
+                FragmentSectionDetails.spuparmcover.setSelection(cursorPosition+1);
             }else if(secdet.spties.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.spties.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.spties.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.spties.setText(sb.toString());
-                SectionDetailsFragment.spties.setSelection(cursorPosition+1);
+                FragmentSectionDetails.spties.setText(sb.toString());
+                FragmentSectionDetails.spties.setSelection(cursorPosition+1);
             }else if(secdet.sptiesnumber.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.sptiesnumber.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.sptiesnumber.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.sptiesnumber.setText(sb.toString());
-                SectionDetailsFragment.sptiesnumber.setSelection(cursorPosition+1);
+                FragmentSectionDetails.sptiesnumber.setText(sb.toString());
+                FragmentSectionDetails.sptiesnumber.setSelection(cursorPosition+1);
             }else if(secdet.sptiescover.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.sptiescover.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.sptiescover.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.sptiescover.setText(sb.toString());
-                SectionDetailsFragment.sptiescover.setSelection(cursorPosition+1);
+                FragmentSectionDetails.sptiescover.setText(sb.toString());
+                FragmentSectionDetails.sptiescover.setSelection(cursorPosition+1);
             }else if(secdet.metfc.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.metfc.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.metfc.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.metfc.setText(sb.toString());
-                SectionDetailsFragment.metfc.setSelection(cursorPosition+1);
+                FragmentSectionDetails.metfc.setText(sb.toString());
+                FragmentSectionDetails.metfc.setSelection(cursorPosition+1);
             }else if(secdet.metfy.hasFocus()) {
-                int cursorPosition = SectionDetailsFragment.metfy.getSelectionStart();
+                int cursorPosition = FragmentSectionDetails.metfy.getSelectionStart();
                 sb.insert(cursorPosition,num);
-                SectionDetailsFragment.metfy.setText(sb.toString());
-                SectionDetailsFragment.metfy.setSelection(cursorPosition+1);
+                FragmentSectionDetails.metfy.setText(sb.toString());
+                FragmentSectionDetails.metfy.setSelection(cursorPosition+1);
             }
         }
         else
             currentLength--;
     }
 
-    public static KeyboardFragment newInstance(String EditTextValue)
+    public static FragmentKeyboard newInstance(String EditTextValue)
     {
-        KeyboardFragment fragment=new KeyboardFragment();
+        FragmentKeyboard fragment=new FragmentKeyboard();
         Bundle bundle=new Bundle();
         bundle.putString("et_value", EditTextValue);
         fragment.setArguments(bundle);

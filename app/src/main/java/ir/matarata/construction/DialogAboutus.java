@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.TextView;
 
-public class AboutusDialog extends Activity {
+public class DialogAboutus extends Activity {
 
     private TextView tv1,tv2;
 

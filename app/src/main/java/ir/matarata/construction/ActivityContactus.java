@@ -18,7 +18,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import net.steamcrafted.loadtoast.LoadToast;
 
-public class ContactusActivity extends AppCompatActivity {
+public class ActivityContactus extends AppCompatActivity {
 
     private Toolbar toolbar;
     private MaterialEditText nameet,emailet,criticset;
@@ -103,9 +103,9 @@ public class ContactusActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(nameet.getText().toString().equals("") | emailet.getText().toString().equals("") | criticset.getText().toString().equals("")){
-                    Toast.makeText(ContactusActivity.this, "لطفا تمام فیلدها را پر نمایید!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ActivityContactus.this, "لطفا تمام فیلدها را پر نمایید!", Toast.LENGTH_LONG).show();
                 }else if(nameet.getText().toString().length() < 3){
-                    Toast.makeText(ContactusActivity.this, "نام باید حداقل 3 حرف باشد!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ActivityContactus.this, "نام باید حداقل 3 حرف باشد!", Toast.LENGTH_LONG).show();
                 }else{
                     contentOfEmailType = criticset.getHint().toString();
                     contentOfEmail = criticset.getText().toString() + "\n\n" + nameet.getText().toString() + " , " + emailet.getText().toString();
@@ -117,7 +117,7 @@ public class ContactusActivity extends AppCompatActivity {
                     try {
                         startActivity(Intent.createChooser(i, "ارسال ایمیل..."));
                     } catch (android.content.ActivityNotFoundException ex) {
-                        Toast.makeText(ContactusActivity.this, "هیچ نرم افزاری برای ارسال ایمیل یافت نشد!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ActivityContactus.this, "هیچ نرم افزاری برای ارسال ایمیل یافت نشد!", Toast.LENGTH_LONG).show();
                     }
                 }
             }

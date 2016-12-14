@@ -6,12 +6,10 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -24,7 +22,7 @@ import com.andexert.library.RippleView;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.wang.avi.AVLoadingIndicatorView;
 
-public class ExitDialog extends Activity {
+public class DialogExit extends Activity {
 
     private TextView questiontv;
     private Button exitsavebtn,exitnosavebtn,cancelbtn,autonamebtn;
@@ -73,11 +71,11 @@ public class ExitDialog extends Activity {
                             params.width = dpToPx(320);
                             wholerl.setLayoutParams(params);
                             filenameet.setVisibility(View.VISIBLE);
-                            filenameet.startAnimation(AnimationUtils.loadAnimation(ExitDialog.this, R.anim.exitdialog_fadein));
+                            filenameet.startAnimation(AnimationUtils.loadAnimation(DialogExit.this, R.anim.exitdialog_fadein));
                             fourthripple.setVisibility(View.VISIBLE);
-                            fourthripple.startAnimation(AnimationUtils.loadAnimation(ExitDialog.this, R.anim.exitdialog_fadein));
+                            fourthripple.startAnimation(AnimationUtils.loadAnimation(DialogExit.this, R.anim.exitdialog_fadein));
                             doneprogress.setVisibility(View.VISIBLE);
-                            doneprogress.startAnimation(AnimationUtils.loadAnimation(ExitDialog.this, R.anim.exitdialog_fadein));
+                            doneprogress.startAnimation(AnimationUtils.loadAnimation(DialogExit.this, R.anim.exitdialog_fadein));
                         }
                     }
                 }.start();

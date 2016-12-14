@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 
-public class OpenActivity extends AppCompatActivity {
+public class ActivityOpen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class OpenActivity extends AppCompatActivity {
             }
             public void onFinish() {
 
-                Intent in = new Intent(OpenActivity.this,MainActivity.class);
+                Intent in = new Intent(ActivityOpen.this,ActivityMain.class);
                 startActivity(in);
                 finish();
             }

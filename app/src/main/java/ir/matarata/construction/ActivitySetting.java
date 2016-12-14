@@ -25,7 +25,7 @@ import com.rey.material.widget.Switch;
 
 import biz.kasual.materialnumberpicker.MaterialNumberPicker;
 
-public class SettingActivity extends AppCompatActivity implements ColorChooserDialog.ColorCallback{
+public class ActivitySetting extends AppCompatActivity implements ColorChooserDialog.ColorCallback{
 
     private Toolbar toolbar;
     private RippleView firstripple,secondripple,thirdripple,fourthripple,fifthripple,sixthripple;
@@ -58,7 +58,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
         firstripple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                colorChooserDialog = new ColorChooserDialog.Builder(SettingActivity.this, R.string.color_choose_dialog)
+                colorChooserDialog = new ColorChooserDialog.Builder(ActivitySetting.this, R.string.color_choose_dialog)
                         .titleSub(R.string.color_choose_dialog_subtitle)  // title of dialog when viewing shades of a color
                         .accentMode(false)  // when true, will display accent palette instead of primary palette
                         .doneButton(R.string.color_choose_dialog_donebtn)  // changes label of the done button
@@ -78,7 +78,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                 db.UpdateSetting(db.QuerySetting(3,2),1,"keyboard_type");
                 db.UpdateSetting(db.QuerySetting(4,2),1,"save_sdcard");
                 db.close();
-                new MaterialDialog.Builder(SettingActivity.this)
+                new MaterialDialog.Builder(ActivitySetting.this)
                         .content(R.string.setting_savebtn_dialog_content)
                         .positiveText("تایید")
                         .onPositive(new MaterialDialog.SingleButtonCallback() {
@@ -98,7 +98,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
         thirdripple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberPicker = new MaterialNumberPicker.Builder(SettingActivity.this)
+                numberPicker = new MaterialNumberPicker.Builder(ActivitySetting.this)
                         .minValue(1)
                         .maxValue(5)
                         .defaultValue(dbDecimalNumber)
@@ -109,7 +109,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                         .enableFocusability(false)
                         .wrapSelectorWheel(true)
                         .build();
-                new AlertDialog.Builder(SettingActivity.this)
+                new AlertDialog.Builder(ActivitySetting.this)
                         .setTitle("انتخاب تعداد اعشار")
                         .setView(numberPicker)
                         .setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
@@ -141,7 +141,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                         db.UpdateSetting(swSaveSDcardValue,1,"save_sdcard");
                     }
                     db.close();
-                    new MaterialDialog.Builder(SettingActivity.this)
+                    new MaterialDialog.Builder(ActivitySetting.this)
                             .content(R.string.setting_savebtn_dialog_content)
                             .positiveText("تایید")
                             .onPositive(new MaterialDialog.SingleButtonCallback() {
@@ -157,7 +157,7 @@ public class SettingActivity extends AppCompatActivity implements ColorChooserDi
                             .negativeText("انصراف")
                             .show();
                 }else if(settingChanged.equals("no")){
-                    Toast.makeText(SettingActivity.this, "تغییری صورت نگرفته است!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivitySetting.this, "تغییری صورت نگرفته است!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

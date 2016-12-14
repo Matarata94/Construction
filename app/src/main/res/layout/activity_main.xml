@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="ir.matarata.construction.MainActivity">
+    tools:context="ir.matarata.construction.ActivityMain">
 
     <include layout="@layout/toolbar"/>
 

@@ -1,25 +1,21 @@
 package ir.matarata.construction;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Matarata on 5/24/2016.
  */
-public class ActionFragment extends Fragment{
+public class FragmentAction extends Fragment{
 
     private View view,view2;
     private Toolbar toolbar;
@@ -32,10 +28,10 @@ public class ActionFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.action_fragment,container,false);
-        if(SectionDetailsFragment.maghtaChanged != 0){
-            TabFragment tf = new TabFragment();
+        if(FragmentSectionDetails.maghtaChanged != 0){
+            FragmentTab tf = new FragmentTab();
             tf.selectPage(1);
-            SectionDetailsFragment.maghtaChanged = 0;
+            FragmentSectionDetails.maghtaChanged = 0;
         }
         defines();
 
@@ -163,7 +159,7 @@ public class ActionFragment extends Fragment{
         firstrl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TabFragment tf = new TabFragment();
+                FragmentTab tf = new FragmentTab();
                 tf.selectPage(1);
             }
         });

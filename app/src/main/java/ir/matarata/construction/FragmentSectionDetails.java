@@ -1,25 +1,19 @@
 package ir.matarata.construction;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -37,7 +31,7 @@ import com.software.shell.fab.ActionButton;
 /**
  * Created by Matarata on 5/24/2016.
  */
-public class SectionDetailsFragment extends Fragment implements View.OnClickListener,View.OnTouchListener,View.OnFocusChangeListener{
+public class FragmentSectionDetails extends Fragment implements View.OnClickListener,View.OnTouchListener,View.OnFocusChangeListener{
 
     private View view;
     public Button arrowbtn,ayinnamebtn,maghtabtn;
@@ -50,7 +44,7 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
     public static MaterialEditText meth,metb,spdownarm,spdownarmnumber,spdownarmcover,spuparm,spuparmnumber,spuparmcover,spties,sptiesnumber,sptiescover,metfc,metfy;
     private Typeface PersianFont,EnglishFont;
     private int arrow=0;
-    public static KeyboardFragment keyboard_fragment;
+    public static FragmentKeyboard keyboard_fragment;
     public static ActionButton fab,subfab1,subfab2,subfab3,subfab4,subfab5,subfab6,subfab7;
     private Intent in;
     private database db;
@@ -163,91 +157,91 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
             /*case R.id.secdet_meth:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(meth.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(meth.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_metb:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(metb.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(metb.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_spdownarm:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(spdownarm.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(spdownarm.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_spdownarmnumber:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(spdownarmnumber.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(spdownarmnumber.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_spdownarmcover:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(spdownarmcover.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(spdownarmcover.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_spuparm:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(spuparm.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(spuparm.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_spuparmnumber:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(spuparmnumber.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(spuparmnumber.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_spuparmcover:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(spuparmcover.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(spuparmcover.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_spties:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(spties.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(spties.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_sptiesnumber:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(sptiesnumber.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(sptiesnumber.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_sptiescover:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(sptiescover.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(sptiescover.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_metfc:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(metfc.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(metfc.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;
             case R.id.secdet_metfy:
                 if(keyboard_fragment==null)
                 {
-                    keyboard_fragment=KeyboardFragment.newInstance(metfy.getText().toString());
+                    keyboard_fragment=FragmentKeyboard.newInstance(metfy.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
                 }
                 break;*/
@@ -259,107 +253,107 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
         /*if(meth.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=new KeyboardFragment();
+                keyboard_fragment=new FragmentKeyboard();
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.insert(0,meth.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.insert(0,meth.getText());
         }else if(metb.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=new KeyboardFragment();
+                keyboard_fragment=new FragmentKeyboard();
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.insert(0,metb.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.insert(0,metb.getText());
         }else if(spdownarm.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(spdownarm.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(spdownarm.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(spdownarm.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(spdownarm.getText());
         }else if(spdownarmnumber.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(spdownarmnumber.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(spdownarmnumber.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(spdownarmnumber.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(spdownarmnumber.getText());
         }else if(spdownarmcover.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(spdownarmcover.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(spdownarmcover.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(spdownarmcover.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(spdownarmcover.getText());
         }else if(spuparm.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(spuparm.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(spuparm.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(spuparm.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(spuparm.getText());
         }else if(spuparmnumber.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(spuparmnumber.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(spuparmnumber.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(spuparmnumber.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(spuparmnumber.getText());
         }else if(spuparmcover.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(spuparmcover.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(spuparmcover.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(spuparmcover.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(spuparmcover.getText());
         }else if(spties.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(spties.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(spties.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(spties.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(spties.getText());
         }else if(sptiesnumber.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(sptiesnumber.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(sptiesnumber.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(sptiesnumber.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(sptiesnumber.getText());
         }else if(sptiescover.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(sptiescover.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(sptiescover.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(sptiescover.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(sptiescover.getText());
         }else if(metfc.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(metfc.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(metfc.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(metfc.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(metfc.getText());
         }else if(metfy.hasFocus()){
             if(keyboard_fragment==null)
             {
-                keyboard_fragment=KeyboardFragment.newInstance(metfy.getText().toString());
+                keyboard_fragment=FragmentKeyboard.newInstance(metfy.getText().toString());
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.Keyboard_container, keyboard_fragment).commit();
             }
-            KeyboardFragment.sb = new StringBuilder();
-            KeyboardFragment.sb.append(metfy.getText());
+            FragmentKeyboard.sb = new StringBuilder();
+            FragmentKeyboard.sb.append(metfy.getText());
         }*/
     }
 
@@ -507,8 +501,8 @@ public class SectionDetailsFragment extends Fragment implements View.OnClickList
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        FragmentTransaction xfragmentTransaction = MainActivity.mFragmentManager.beginTransaction();
-                        xfragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
+                        FragmentTransaction xfragmentTransaction = ActivityMain.mFragmentManager.beginTransaction();
+                        xfragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();
                         maghtaChanged = 1;
                         db.open();
                         db.UpdateInformation(maghtaType,1,"maghta_type");

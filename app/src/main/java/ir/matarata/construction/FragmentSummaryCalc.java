@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 /**
  * Created by Matarata on 5/24/2016.
  */
-public class SummaryCalcFragment extends Fragment {
+public class FragmentSummaryCalc extends Fragment {
 
     @Nullable
     @Override
