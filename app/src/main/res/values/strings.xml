@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Construction</string>
+    <string name="app_name">همراه سازه</string>
     <string name="color_choose_dialog">انتخاب رنگ</string>
     <string name="color_choose_dialog_subtitle">رنگ ها</string>
     <string name="color_choose_dialog_donebtn">تایید</string>

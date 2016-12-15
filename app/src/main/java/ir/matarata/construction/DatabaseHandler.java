@@ -12,14 +12,14 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class database extends SQLiteOpenHelper {
+public class DatabaseHandler extends SQLiteOpenHelper {
 	
 	private final Context mycontext;
 	public final String path = "data/data/ir.matarata.construction/databases/";
 	public final String dbname = "constructiondb.db3";
 	public SQLiteDatabase mydb;
 	
-	public database(Context context) {
+	public DatabaseHandler(Context context) {
 		super(context, "constructiondb.db3", null, 1);
 		mycontext = context;
 	}

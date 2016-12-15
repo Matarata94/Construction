@@ -26,7 +26,7 @@ public class ActivityContactus extends AppCompatActivity {
     private LoadToast lt;
     private AppCompatButton sendbtn;
     private String contentOfEmailType="",contentOfEmail="";
-    private database db;
+    private DatabaseHandler db;
     private String dbHexColor;
 
     @Override
@@ -38,7 +38,7 @@ public class ActivityContactus extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        db = new database(this);
+        db = new DatabaseHandler(this);
         db.open();
         dbHexColor = db.QuerySetting(1,1);
         db.close();

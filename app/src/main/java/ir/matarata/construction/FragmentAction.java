@@ -28,7 +28,7 @@ public class FragmentAction extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.action_fragment,container,false);
+        view = inflater.inflate(R.layout.fragment_action,container,false);
         if(FragmentSectionDetails.maghtaChanged != 0){
             FragmentTab tf = new FragmentTab();
             tf.selectPage(1);

@@ -37,7 +37,7 @@ public class ActivitySetting extends AppCompatActivity implements ColorChooserDi
     private ColorChooserDialog colorChooserDialog;
     private String hexColor="",dbHexColor,swkeyboardValue="",dbSwKeayboardValue,swSaveSDcardValue="",dbSwSaveSDcard;
     private int decimalNumber=0,dbDecimalNumber;
-    private database db;
+    private DatabaseHandler db;
     private MaterialNumberPicker numberPicker;
     private String settingChanged="no";
 
@@ -46,7 +46,7 @@ public class ActivitySetting extends AppCompatActivity implements ColorChooserDi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        db = new database(this);
+        db = new DatabaseHandler(this);
         db.open();
         dbHexColor = db.QuerySetting(1,1);
         dbDecimalNumber = Integer.parseInt(db.QuerySetting(2,1));

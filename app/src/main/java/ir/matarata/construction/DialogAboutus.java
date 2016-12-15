@@ -2,7 +2,6 @@ package ir.matarata.construction;
 
 import android.app.Activity;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.TextView;
@@ -15,7 +14,7 @@ public class DialogAboutus extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.aboutus_dialog);
+        setContentView(R.layout.dialog_aboutus);
         setFinishOnTouchOutside(true);
 
         tv1 = (TextView) findViewById(R.id.aboutus_tv1);

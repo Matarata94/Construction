@@ -11,11 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-/**
- * Created by Matarata on 5/24/2016.
- */
 public class FragmentTab extends Fragment {
 
     public static TabLayout tabLayout;
@@ -28,7 +24,7 @@ public class FragmentTab extends Fragment {
         View x =  inflater.inflate(R.layout.tab_layout,null);
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
-        database db = new database(getContext());
+        DatabaseHandler db = new DatabaseHandler(getContext());
         db.open();
         tabLayout.setBackgroundColor(Color.parseColor(db.QuerySetting(1,1)));
         db.close();

@@ -47,15 +47,15 @@ public class FragmentSectionDetails extends Fragment implements View.OnClickList
     public static FragmentKeyboard keyboard_fragment;
     public static ActionButton fab,subfab1,subfab2,subfab3,subfab4,subfab5,subfab6,subfab7;
     private Intent in;
-    private database db;
+    private DatabaseHandler db;
     public static int maghtaChanged=0;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.sectiondetails_fragment,container,false);
+        view = inflater.inflate(R.layout.fragment_sectiondetails,container,false);
         Initiate();
-        db = new database(getActivity());
+        db = new DatabaseHandler(getActivity());
         db.open();
         maghtabtn.setText(db.QueryInformation(1,1));
         db.close();
@@ -405,9 +405,8 @@ public class FragmentSectionDetails extends Fragment implements View.OnClickList
 
     public void showFab(){
         fab.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fab_anim));
-        fab.setType(ActionButton.Type.MINI);
         fab.setImageResource(R.drawable.closeicon);
-        fab.setImageSize(15.0f);
+        fab.setImageSize(18.0f);
         fabselectedll.setVisibility(View.VISIBLE);
         arrowbtn.setEnabled(false);
         ayinnamebtn.setEnabled(false);
@@ -476,7 +475,7 @@ public class FragmentSectionDetails extends Fragment implements View.OnClickList
         params.rightMargin = dpToPx(7);
         params.topMargin = dpToPx(3);
         arrowbtn.setLayoutParams(params);
-        arrowbtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.botarrow));
+        arrowbtn.setBackgroundResource(R.drawable.botarrow);
         ayinnamebtn.animate().translationY((float) dpToPx(-80)).translationX((float) dpToPx(80)).rotation(0).setDuration(350).start();
         maghtabtn.animate().translationY((float) dpToPx(-80)).translationX((float) dpToPx(-80)).rotation(0).setDuration(350).start();
         arrow = 1;

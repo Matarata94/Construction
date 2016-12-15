@@ -15,6 +15,6 @@ public class FragmentTinyCalc extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.tinycalc_fragment ,null);
+        return inflater.inflate(R.layout.fragment_tinycalc,null);
     }
 }

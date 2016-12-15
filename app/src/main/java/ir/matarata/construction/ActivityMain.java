@@ -9,22 +9,16 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.style.AlignmentSpan;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -32,7 +26,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 public class ActivityMain extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private database db;
+    private DatabaseHandler db;
     private String mainColor;
 
     private DrawerLayout mDrawerLayout;
@@ -123,7 +117,7 @@ public class ActivityMain extends AppCompatActivity {
     }
 
     private void initiate(){
-        db = new database(this);
+        db = new DatabaseHandler(this);
         db.databasecreate();
         db.open();
         mainColor = db.QuerySetting(1,1);
@@ -148,7 +142,7 @@ public class ActivityMain extends AppCompatActivity {
 
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.containerView, new FragmentAction()).commit();
+        mFragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();
     }
 
     @Override
