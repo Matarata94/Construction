@@ -1,35 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Archive">
-        <menu>
-            <item android:title="New"
-                android:id="@+id/nav_item_new"
-                android:icon="@drawable/newfiledrawer"/>
+    <group android:id="@+id/menu_group_mother" android:checkableBehavior="single">
+            <group android:id="@+id/menu_group1" android:checkableBehavior="single">
+                <item android:title="انتخاب عملکرد"
+                    android:id="@+id/nav_item_actionChoose"
+                    android:icon="@drawable/homedrawer"/>
+            </group>
+            <group android:id="@+id/menu_group2" android:checkableBehavior="single">
+                <item android:title="جدید"
+                    android:id="@+id/nav_item_new"
+                    android:icon="@drawable/newfiledrawer"/>
 
-            <item android:title="Save"
-                android:id="@+id/nav_item_save"
-                android:icon="@drawable/savedrawer"/>
+                <item android:title="ذخیره"
+                    android:id="@+id/nav_item_save"
+                    android:icon="@drawable/savedrawer"/>
 
-            <item android:title="Open"
-                android:id="@+id/nav_item_open"
-                android:icon="@drawable/opendrawer"/>
-        </menu>
-    </item>
-
-    <item android:title="Others">
-        <menu>
-            <item
-                android:title="VIP"
-                android:id="@+id/nav_item_vip"
-                android:icon="@drawable/vipdrawer"/>
-            <item
-                android:title="Setting"
-                android:id="@+id/nav_item_setting"
-                android:icon="@drawable/settingdrawer"/>
-        </menu>
-    </item>
-            <item
-                android:title="Contact us"
-                android:id="@+id/nav_item_contactus"
-                android:icon="@drawable/contactusdrawer"/>
+                <item android:title="باز کردن"
+                    android:id="@+id/nav_item_open"
+                    android:icon="@drawable/opendrawer"/>
+            </group>
+            <group android:id="@+id/menu_group3" android:checkableBehavior="single">
+                <item
+                    android:title="خرید"
+                    android:id="@+id/nav_item_vip"
+                    android:icon="@drawable/vipdrawer"/>
+                <item
+                    android:title="تنظیمات"
+                    android:id="@+id/nav_item_setting"
+                    android:icon="@drawable/settingdrawer"/>
+            </group>
+            <group android:id="@+id/menu_group4" android:checkableBehavior="single">
+                <item
+                    android:title="اشتراک گذاری برنامه"
+                    android:id="@+id/nav_item_shareapp"
+                    android:icon="@drawable/sharedrawer"/>
+                <item
+                    android:title="امتیاز دهی به برنامه"
+                    android:id="@+id/nav_item_ratingapp"
+                    android:icon="@drawable/ratingdrawer"/>
+                <item
+                    android:title="ارتباط با ما"
+                    android:id="@+id/nav_item_contactus"
+                    android:icon="@drawable/contactusdrawer"/>
+                <item
+                    android:title="درباره ما"
+                    android:id="@+id/nav_item_aboutus"
+                    android:icon="@drawable/aboutusdrawer"/>
+            </group>
+    </group>
 </menu>

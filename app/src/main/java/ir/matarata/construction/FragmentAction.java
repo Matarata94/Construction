@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -159,8 +160,8 @@ public class FragmentAction extends Fragment{
         firstrl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTab tf = new FragmentTab();
-                tf.selectPage(1);
+                FragmentTransaction mFragmentTransaction = ActivityMain.mFragmentManager.beginTransaction();
+                mFragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();
             }
         });
 

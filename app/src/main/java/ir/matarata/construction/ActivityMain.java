@@ -23,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -43,6 +44,9 @@ public class ActivityMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+        }
         setContentView(R.layout.activity_main);
 
         initiate();
@@ -50,8 +54,14 @@ public class ActivityMain extends AppCompatActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
+                int itemId = menuItem.getItemId();
+                mNavigationView.setCheckedItem(itemId);
                 mDrawerLayout.closeDrawers();
-                switch (menuItem.getItemId()){
+                switch (itemId){
+                    case R.id.nav_item_actionChoose:
+                        mFragmentTransaction = mFragmentManager.beginTransaction();
+                        mFragmentTransaction.replace(R.id.containerView, new FragmentAction()).commit();
+                        break;
                     case R.id.nav_item_new:
                         new MaterialDialog.Builder(ActivityMain.this)
                                 .content(R.string.mainActivity_resetdata_dialog_content)
@@ -66,13 +76,43 @@ public class ActivityMain extends AppCompatActivity {
                                 .negativeText("انصراف")
                                 .show();
                         break;
-                    case R.id.nav_item_contactus:
-                        Intent in =new Intent(ActivityMain.this,ActivityContactus.class);
-                        startActivity(in);
+                    case R.id.nav_item_save:
+                        break;
+                    case R.id.nav_item_open:
+                        break;
+                    case R.id.nav_item_vip:
                         break;
                     case R.id.nav_item_setting:
-                        Intent in2 =new Intent(ActivityMain.this,ActivitySetting.class);
+                        Intent in =new Intent(ActivityMain.this,ActivitySetting.class);
+                        startActivity(in);
+                        break;
+                    case R.id.nav_item_shareapp:
+                        try {
+                            Intent i = new Intent(Intent.ACTION_SEND);
+                            i.setType("text/plain");
+                            i.putExtra(Intent.EXTRA_SUBJECT, "همراه سازه");
+                            String sAux = "\nلطفا نرم افزار زیر را دانلود کنید\n\n";
+                            sAux = sAux + "https://cafebazaar.ir/app/com.matarata.englishquiz/?l=fa \n\n";
+                            i.putExtra(Intent.EXTRA_TEXT, sAux);
+                            startActivity(Intent.createChooser(i, "انتخاب کنید"));
+                        }
+                        catch(Exception e)
+                        {
+                        }
+                        break;
+                    case R.id.nav_item_ratingapp:
+                        Intent intent = new Intent(Intent.ACTION_EDIT);
+                        intent.setData(Uri.parse("bazaar://details?id=" + "com.matarata.englishquiz"));
+                        intent.setPackage("com.farsitel.bazaar");
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_item_contactus:
+                        Intent in2 =new Intent(ActivityMain.this,ActivityContactus.class);
                         startActivity(in2);
+                        break;
+                    case R.id.nav_item_aboutus:
+                        Intent in3 =new Intent(ActivityMain.this,DialogAboutus.class);
+                        startActivity(in3);
                         break;
                 }
                 return false;
@@ -91,9 +131,10 @@ public class ActivityMain extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setBackgroundColor(Color.parseColor(mainColor));
         Typeface myfont = Typeface.createFromAsset(getAssets(), "BFARNAZ.TTF");
-        android.support.v7.widget.AppCompatTextView tv_ins = (android.support.v7.widget.AppCompatTextView) findViewById(R.id.toolbar_title);
+        TextView tv_ins = (TextView) findViewById(R.id.toolbar_title);
         tv_ins.setText("همراه سازه");
         tv_ins.setGravity(Gravity.CENTER);
         tv_ins.setTextSize(25);
@@ -117,25 +158,6 @@ public class ActivityMain extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        int positionOfMenuItem = 0;
-        MenuItem item = menu.getItem(positionOfMenuItem);
-        SpannableString s = new SpannableString("اشتراک گذاری برنامه");
-        s.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER), 0, s.length(), 0);
-        item.setTitle(s);
-
-        int positionOfMenuItem2 = 1;
-        MenuItem item2 = menu.getItem(positionOfMenuItem2);
-        SpannableString s2 = new SpannableString("امتیازدهی به برنامه");
-        s2.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER), 0, s2.length(), 0);
-        item2.setTitle(s2);
-
-        int positionOfMenuItem3 = 2;
-        MenuItem item3 = menu.getItem(positionOfMenuItem3);
-        SpannableString s3 = new SpannableString("درباره ما");
-        s3.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER), 0, s3.length(), 0);
-        item3.setTitle(s3);
-
         return true;
     }
 
@@ -143,44 +165,14 @@ public class ActivityMain extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_shareapp) {
-            try {
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_SUBJECT, "My application name");
-                String sAux = "\nلطفا نرم افزار زیر را دانلود کنید\n\n";
-                sAux = sAux + "https://cafebazaar.ir/app/com.matarata.englishquiz/?l=fa \n\n";
-                i.putExtra(Intent.EXTRA_TEXT, sAux);
-                startActivity(Intent.createChooser(i, "choose one"));
-            }
-            catch(Exception e)
-            {
-            }
-        }else if (id == R.id.action_rateapp) {
-            Intent intent = new Intent(Intent.ACTION_EDIT);
-            intent.setData(Uri.parse("bazaar://details?id=" + "com.matarata.englishquiz"));
-            intent.setPackage("com.farsitel.bazaar");
-            startActivity(intent);
-        }else if (id == R.id.action_aboutus) {
-            Intent i = new Intent(ActivityMain.this,DialogAboutus.class);
-            startActivity(i);
-        }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onBackPressed() {
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-            mDrawerLayout.closeDrawer(Gravity.LEFT);
-        }/*else if(FragmentSectionDetails.keyboard_fragment!=null) {
-            if(FragmentSectionDetails.keyboard_fragment.isVisible()) {
-                getSupportFragmentManager().beginTransaction().remove(FragmentSectionDetails.keyboard_fragment).commit();
-                FragmentSectionDetails.keyboard_fragment = null;
-            }else{
-                Intent exitintent = new Intent(getApplicationContext(),DialogExit.class);
-                startActivity(exitintent);
-            }
-        }*/else{
+        if (mDrawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+            mDrawerLayout.closeDrawer(Gravity.RIGHT);
+        }else{
             Intent exitintent = new Intent(getApplicationContext(),DialogExit.class);
             startActivity(exitintent);
         }
