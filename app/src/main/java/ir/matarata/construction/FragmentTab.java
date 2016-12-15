@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class FragmentTab extends Fragment {
 
     public static TabLayout tabLayout;
-    public static CustomViewPager viewPager;
+    public static ViewPager viewPager;
     public static int int_items = 3;
 
     @Nullable
@@ -27,7 +27,7 @@ public class FragmentTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View x =  inflater.inflate(R.layout.tab_layout,null);
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
-        viewPager = (CustomViewPager) x.findViewById(R.id.viewpager);
+        viewPager = (ViewPager) x.findViewById(R.id.viewpager);
         database db = new database(getContext());
         db.open();
         tabLayout.setBackgroundColor(Color.parseColor(db.QuerySetting(1,1)));

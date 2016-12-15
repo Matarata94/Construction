@@ -149,10 +149,6 @@ public class ActivityMain extends AppCompatActivity {
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.containerView, new FragmentAction()).commit();
-
-        /*mFragmentManager = getSupportFragmentManager();
-        mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.containerView, new FragmentTab()).commit();*/
     }
 
     @Override
